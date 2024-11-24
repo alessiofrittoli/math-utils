@@ -29,27 +29,27 @@
 	"exports": {
 		".": {
 			"import": "./dist/index.mjs",
-			"require": "./dist/index.cjs"
+			"require": "./dist/index.js"
 		},
 		"./format": {
 			"types": "./dist/format.d.ts",
 			"import": "./dist/format.mjs",
-			"require": "./dist/format.cjs"
+			"require": "./dist/format.js"
 		},
 		"./helpers": {
 			"types": "./dist/helpers.d.ts",
 			"import": "./dist/helpers.mjs",
-			"require": "./dist/helpers.cjs"
+			"require": "./dist/helpers.js"
 		},
 		"./interpolation": {
 			"types": "./dist/interpolation.d.ts",
 			"import": "./dist/interpolation.mjs",
-			"require": "./dist/interpolation.cjs"
+			"require": "./dist/interpolation.js"
 		},
 		"./random": {
 			"types": "./dist/random.d.ts",
 			"import": "./dist/random.mjs",
-			"require": "./dist/random.cjs"
+			"require": "./dist/random.js"
 		},
 		"./types": {
 			"types": "./dist/types.d.ts"
