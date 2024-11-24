@@ -57,8 +57,6 @@
 	},
 	"sideEffects": false,
 	"scripts": {
-		"lint:init": "lint -- --init",
-		"test:init": "npx ts-jest config:init",
 		"build": "eslint && jest --ci --verbose && tsup",
 		"lint": "eslint",
 		"test": "jest --watchAll --verbose",
