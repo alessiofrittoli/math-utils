@@ -1,4 +1,8 @@
-/** @type {import('ts-jest').JestConfigWithTsJest} **/
+/**
+ * Initial file generated with `npx ts-jest config:init`
+ * 
+ * @type {import('ts-jest').JestConfigWithTsJest}
+ */
 module.exports = {
 	testEnvironment: 'node',
 	moduleDirectories: [ 'node_modules', '<rootDir>/' ],
