@@ -9,4 +9,5 @@ export default defineConfig( {
 	skipNodeModulesBundle: true,
 	clean		: true,
 	treeshake	: true,
+	minify		: true,
 } )
