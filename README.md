@@ -10,6 +10,7 @@ Everything is exported from the root of this library but specific paths can be u
 
 ### Table of Contents
 
+- [Getting started](#getting-started)
 - Utilities
 	- [Formatting functions](https://github.com/alessiofrittoli/math-utils/blob/master/docs/format/README.md)
 	- [Helpers functions](https://github.com/alessiofrittoli/math-utils/blob/master/docs/helpers/README.md)
@@ -22,6 +23,20 @@ Everything is exported from the root of this library but specific paths can be u
 - [Credits](#made-with-)
 
 ---
+
+### Getting started
+
+Run the following command to start using `math-utils` in your projects:
+
+```bash
+npm i @alessiofrittoli/math-utils
+```
+
+or using `pnpm`
+
+```bash
+pnpm i @alessiofrittoli/math-utils
+```
 
 ### [ESLint](https://www.npmjs.com/package/eslint)
 
