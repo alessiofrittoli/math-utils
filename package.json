@@ -51,11 +51,6 @@
 			"import": "./dist/random.mjs",
 			"require": "./dist/random.cjs"
 		},
-		"./somethingDefaultExported": {
-			"types": "./dist/somethingDefaultExported.d.ts",
-			"import": "./dist/somethingDefaultExported.mjs",
-			"require": "./dist/somethingDefaultExported.cjs"
-		},
 		"./types": {
 			"types": "./dist/types.d.ts"
 		}
