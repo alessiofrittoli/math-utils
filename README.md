@@ -10,6 +10,12 @@ Everything is exported from the root of this library but specific paths can be u
 
 ### Table of Contents
 
+- Utilities
+	- [Formatting functions](https://github.com/alessiofrittoli/math-utils/blob/master/docs/format/README.md)
+	- [Helpers functions](https://github.com/alessiofrittoli/math-utils/blob/master/docs/helpers/README.md)
+	- [Interpolation functions](https://github.com/alessiofrittoli/math-utils/blob/master/docs/interpolation/README.md)
+	- [Random number functions](https://github.com/alessiofrittoli/math-utils/blob/master/docs/random/README.md)
+	- [Types](https://github.com/alessiofrittoli/math-utils/blob/master/docs/types/README.md)
 - [ESLint](#eslint)
 - [Jest](#jest)
 - [Security](#security)
