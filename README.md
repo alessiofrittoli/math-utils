@@ -1,6 +1,6 @@
 # Math Utils 🤓
 
-Version 0.2.1
+Version 0.3.0
 
 ## Lightweight TypeScript math utility functions
 
