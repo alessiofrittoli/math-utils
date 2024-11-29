@@ -33,15 +33,6 @@ export const getClosestNumber = ( haystack: number[], needle: number ) => {
 		const current		= haystack[ i ] || 0
 		const currentDiff	= Math.abs( needle - current ) 
 
-		// if (
-		// 	// track closest number
-		// 	currentDiff < closestDiff ||
-		// 	// handle paradox where 2 numbers are equidistant from the given `needle`
-		// 	( currentDiff === closestDiff && current > closest )
-		// ) {
-		// 	closest		= current
-		// 	closestDiff	= currentDiff
-		// }
 		if ( currentDiff < closestDiff ) {
 			closest		= current
 			closestDiff	= currentDiff
@@ -90,4 +81,21 @@ export const englishOrdinalSuffix = ( number: number ) => {
 			? 'rd'
 			: 'th'
 	)
+}
+
+
+/**
+ * Pads a number with leading zeros to ensure it reaches a specified length.
+ * 
+ * @param number The number to pad with leading zeros.
+ * @param length The minimum desired length of the resulting string.
+ * 
+ * @returns The number as a string, padded with leading zeros if necessary.
+ */
+export const pad = ( number: number, length: number ) => {
+	let str = number.toString()		
+	while ( str.length < length ) {
+		str = '0' + str
+	}
+	return str
 }

@@ -275,7 +275,7 @@ getNumbersFromString( 'Order #123-456. Delivery in 7 days.' )
 
 ---
 
-##### englishOrdinalSuffix
+### englishOrdinalSuffix
 
 Determines the English ordinal suffix (`st`, `nd`, `rd`, `th`) for a given number.
 
@@ -345,6 +345,72 @@ englishOrdinalSuffix( 101 )	// Output: 'st'
 englishOrdinalSuffix( 112 )	// Output: 'th'
 englishOrdinalSuffix( 122 )	// Output: 'nd'
 englishOrdinalSuffix( 123 )	// Output: 'rd'
+```
+
+</details>
+
+---
+
+### pad
+
+The `pad` function adds leading zeros to a number to ensure its string representation reaches a specified length.
+
+<details>
+
+<sumamry>Parameters</sumamry>
+
+| Parameter | Type     | Description                                               |
+|-----------|----------|-----------------------------------------------------------|
+| `number`  | `number` | The number to be padded with leading zeros.               |
+| `length`  | `number` | The minimum length of the resulting string after padding. |
+
+</details>
+
+<details>
+
+<sumamry>Returns</sumamry>
+
+Type: `string`
+
+A string representation of the input number, padded with leading zeros if its length is less than the specified length.
+
+</details>
+
+<details>
+
+<sumamry>Usage</sumamry>
+
+###### Padding a Short Number
+
+```ts
+import { pad } from '@alessiofrittoli/math-utils'
+// or
+import { pad } from '@alessiofrittoli/math-utils/helpers'
+
+console.log( pad( 5, 3 ) )
+// Outputs: "005"
+```
+
+###### No Padding Needed
+
+```ts
+import { pad } from '@alessiofrittoli/math-utils'
+// or
+import { pad } from '@alessiofrittoli/math-utils/helpers'
+
+console.log( pad( 123, 3 ) ) 
+// Outputs: "123"
+```
+
+###### Larger Numbers
+
+```ts
+import { pad } from '@alessiofrittoli/math-utils'
+// or
+import { pad } from '@alessiofrittoli/math-utils/helpers'
+
+console.log( pad( 42, 5 ) ) 
+// Outputs: "00042"
 ```
 
 </details>
