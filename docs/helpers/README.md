@@ -357,7 +357,7 @@ The `pad` function adds leading zeros to a number to ensure its string represent
 
 <details>
 
-<sumamry>Parameters</sumamry>
+<summary>Parameters</summary>
 
 | Parameter | Type     | Description                                               |
 |-----------|----------|-----------------------------------------------------------|
@@ -368,7 +368,7 @@ The `pad` function adds leading zeros to a number to ensure its string represent
 
 <details>
 
-<sumamry>Returns</sumamry>
+<summary>Returns</summary>
 
 Type: `string`
 
@@ -378,7 +378,7 @@ A string representation of the input number, padded with leading zeros if its le
 
 <details>
 
-<sumamry>Usage</sumamry>
+<summary>Usage</summary>
 
 ###### Padding a Short Number
 
