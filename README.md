@@ -52,10 +52,22 @@ Run all the defined test suites by running the following:
 
 ```bash
 # Run tests and watch file changes.
-npm run test
+pnpm test
 
 # Run tests in a CI environment.
-npm run test:ci
+pnpm test:ci
+```
+
+You can eventually run specific suits like so:
+
+```bash
+pnpm test:format
+# or
+pnpm test:helpers
+# or
+pnpm test:interpolation
+# or
+pnpm test:random
 ```
 
 ---

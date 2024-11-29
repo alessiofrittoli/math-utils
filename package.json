@@ -60,7 +60,11 @@
 		"build": "eslint && jest --ci --verbose && tsup",
 		"lint": "eslint",
 		"test": "jest --watchAll --verbose",
-		"test:ci": "jest --ci --verbose"
+		"test:ci": "jest --ci --verbose",
+		"test:format": "pnpm test format.test.ts",
+		"test:helpers": "pnpm test helpers.test.ts",
+		"test:interpolation": "pnpm test interpolation.test.ts",
+		"test:random": "pnpm test random.test.ts"
 	},
 	"devDependencies": {
 		"@eslint/js": "^9.15.0",
