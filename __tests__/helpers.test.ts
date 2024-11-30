@@ -1,4 +1,4 @@
-import { englishOrdinalSuffix, getClosestNumber, getNumbersFromString, pad, round } from '@/helpers'
+import { englishOrdinalSuffix, getClosestNumber, getNumbersFromString, padStart, round } from '@/helpers'
 
 
 describe( 'round', () => {
@@ -135,20 +135,25 @@ describe( 'englishOrdinalSuffix', () => {
 } )
 
 
-describe( 'pad', () => {
+describe( 'padStart', () => {
 
 	it( 'pads number correctly', () => {
-		expect( pad( 7, 3 ) ).toBe( '007' )
+		expect( padStart( 7, 3 ) ).toBe( '007' )
 	} )
 
 
 	it( 'skips un-necessary padding', () => {
-		expect( pad( 123, 3 ) ).toBe( '123' )
+		expect( padStart( 123, 3 ) ).toBe( '123' )
 	} )
 
 
 	it( 'pads large numbers', () => {
-		expect( pad( 42, 5 ) ).toBe( '00042' )
+		expect( padStart( 123456, 5 ) ).toBe( '123456' )
+	} )
+
+
+	it( 'handles custom characters', () => {
+		expect( padStart( 7, 3, '+' ) ).toBe( '++7' )
 	} )
 
 } )
