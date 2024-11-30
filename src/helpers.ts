@@ -85,17 +85,29 @@ export const englishOrdinalSuffix = ( number: number ) => {
 
 
 /**
- * Pads a number with leading zeros to ensure it reaches a specified length.
+ * Left pads a string or number with the given character to ensure it reaches a specified length.
  * 
- * @param number The number to pad with leading zeros.
- * @param length The minimum desired length of the resulting string.
+ * This behaves similarly to `String.prototype.padStart`
  * 
- * @returns The number as a string, padded with leading zeros if necessary.
+ * @param value		The value to pad with the given character.
+ * @param maxLength	The length of the resulting string once the given value has been padded.\
+ * 					If this parameter is smaller than the given value's length, the current string will be returned as it is.
+ * @param character ( Optional ) The character to use while padding the given value.
+ * 
+ * @returns The number as a string, padded with the given character if necessary. Default: `0`.
  */
-export const pad = ( number: number, length: number ) => {
-	let str = number.toString()		
-	while ( str.length < length ) {
-		str = '0' + str
-	}
-	return str
+export const padStart = (
+	value		: string | number,
+	maxLength	: number,
+	character	: string = '0',
+) => {
+	value = value.toString()
+	if ( value.length >= maxLength ) return value
+
+	const padding = Array( maxLength + 1 ).join( character )
+
+	return (
+		`${ padding }${ value }`
+			.slice( maxLength * -1 )
+	)
 }
