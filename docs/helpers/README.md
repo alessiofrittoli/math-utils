@@ -351,18 +351,20 @@ englishOrdinalSuffix( 123 )	// Output: 'rd'
 
 ---
 
-### pad
+### padStart
 
-The `pad` function adds leading zeros to a number to ensure its string representation reaches a specified length.
+The `padStart` function adds padding to the left of a given value (either a string or a number) until it reaches the specified length.\
+This function replicates the behavior of [String.prototype.padStart()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/padStart) but allows for more customized use cases.
 
 <details>
 
 <summary>Parameters</summary>
 
-| Parameter | Type     | Description                                               |
-|-----------|----------|-----------------------------------------------------------|
-| `number`  | `number` | The number to be padded with leading zeros.               |
-| `length`  | `number` | The minimum length of the resulting string after padding. |
+| Parameter   | Type               | Default | Description                                               |
+|-------------|--------------------|---------| ----------------------------------------------------------|
+| `value`     | `string \| number` | -       | The value to pad with the given character.                |
+| `maxLength` | `number`           | -       | The desired length of the resulting string. If value is already this length or longer, no padding is applied. |
+| `character` | `number`           | `"0"`   | (Optional) The character used for padding. |
 
 </details>
 
@@ -372,7 +374,7 @@ The `pad` function adds leading zeros to a number to ensure its string represent
 
 Type: `string`
 
-A string representation of the input number, padded with leading zeros if its length is less than the specified length.
+The padded string if value is shorter than `maxLength`; otherwise, the original `value` converted to a string.
 
 </details>
 
@@ -383,34 +385,45 @@ A string representation of the input number, padded with leading zeros if its le
 ###### Padding a Short Number
 
 ```ts
-import { pad } from '@alessiofrittoli/math-utils'
+import { padStart } from '@alessiofrittoli/math-utils'
 // or
-import { pad } from '@alessiofrittoli/math-utils/helpers'
+import { padStart } from '@alessiofrittoli/math-utils/helpers'
 
-console.log( pad( 5, 3 ) )
+console.log( padStart( 5, 3 ) )
 // Outputs: "005"
 ```
 
 ###### No Padding Needed
 
 ```ts
-import { pad } from '@alessiofrittoli/math-utils'
+import { padStart } from '@alessiofrittoli/math-utils'
 // or
-import { pad } from '@alessiofrittoli/math-utils/helpers'
+import { padStart } from '@alessiofrittoli/math-utils/helpers'
 
-console.log( pad( 123, 3 ) ) 
+console.log( padStart( 123, 3 ) ) 
 // Outputs: "123"
 ```
 
 ###### Larger Numbers
 
 ```ts
-import { pad } from '@alessiofrittoli/math-utils'
+import { padStart } from '@alessiofrittoli/math-utils'
 // or
-import { pad } from '@alessiofrittoli/math-utils/helpers'
+import { padStart } from '@alessiofrittoli/math-utils/helpers'
 
-console.log( pad( 42, 5 ) ) 
-// Outputs: "00042"
+console.log( padStart( 123456, 5 ) ) 
+// Outputs: "123456"
+```
+
+###### Using custom character
+
+```ts
+import { padStart } from '@alessiofrittoli/math-utils'
+// or
+import { padStart } from '@alessiofrittoli/math-utils/helpers'
+
+console.log( padStart( 7, 3, '+' ) ) 
+// Outputs: "++7"
 ```
 
 </details>
