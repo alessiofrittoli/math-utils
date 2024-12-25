@@ -1,6 +1,6 @@
 # Math Utils 🤓
 
-Version 1.0.0
+Version 1.1.0
 
 [![Coverage Status](https://coveralls.io/repos/github/alessiofrittoli/math-utils/badge.svg?branch=feature/unit-test-workflow-improvement)](https://coveralls.io/github/alessiofrittoli/math-utils?branch=feature/unit-test-workflow-improvement)
 
