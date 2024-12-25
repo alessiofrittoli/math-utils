@@ -3,9 +3,8 @@ on: [ "push", "pull_request" ]
 name: Unit Test
 
 jobs:
-
-  build:
-    name: Build
+  test:
+    name: Run Unit Tests
     runs-on: ubuntu-latest
     steps:
 
@@ -20,6 +19,13 @@ jobs:
       run: |
         npm install
         npm run test:ci:coverage
-
-    - name: Coveralls
-      uses: coverallsapp/github-action@v2
+    
+  report:
+    needs: test
+    name: Report test coverage
+    runs-on: ubuntu-latest
+    steps:
+      - name: Coveralls
+        uses: coverallsapp/github-action@v2
+        with:
+          github-token: ${{ secrets.COVERALLS_REPO_TOKEN }}
