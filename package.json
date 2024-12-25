@@ -66,6 +66,7 @@
 		"test:jsdom": "JSDOM=true pnpm test",
 		"test:ci": "jest --ci --verbose",
 		"test:ci:jsdom": "JSDOM=true pnpm test:ci",
+		"test:ci:coverage": "pnpm test:ci --coverage",
 		"test:serve-coverage": "http-server ./coverage/lcov-report --gzip true -p 0 -o --silent",
 		"test:coverage": "concurrently --prefix none --kill-others \"pnpm jest --watchAll --verbose --coverage\" \"pnpm test:serve-coverage\"",
 		"test:coverage:jsdom": "JSDOM=true pnpm test:coverage",
