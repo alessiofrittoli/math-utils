@@ -2,6 +2,8 @@
 
 Version 1.0.0
 
+[![Coverage Status](https://coveralls.io/repos/github/alessiofrittoli/math-utils/badge.svg?branch=feature/unit-test-workflow-improvement)](https://coveralls.io/github/alessiofrittoli/math-utils?branch=feature/unit-test-workflow-improvement)
+
 ## Lightweight TypeScript math utility functions
 
 This lightweight TypeScript utility library comes with common and utility math functions.
