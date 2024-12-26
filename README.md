@@ -22,6 +22,7 @@ Everything is exported from the root of this library but specific paths can be u
 - [Development](#development)
 	- [ESLint](#eslint)
 	- [Jest](#jest)
+- [Contributing](#contributing)
 - [Security](#security)
 - [Credits](#made-with-)
 
@@ -112,6 +113,13 @@ An HTTP server is then started to serve coverage files from `./coverage` folder.
 ```bash
 test:coverage:serve
 ```
+
+---
+
+### Contributing
+
+Contributions are truly welcome!\
+Please refer to the [Contributing Doc](./CONTRIBUTING.md) for more information on how to start contributing to this project.
 
 ---
 
