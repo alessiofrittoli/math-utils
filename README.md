@@ -19,8 +19,10 @@ Everything is exported from the root of this library but specific paths can be u
 	- [Interpolation functions](https://github.com/alessiofrittoli/math-utils/blob/master/docs/interpolation/README.md)
 	- [Random number functions](https://github.com/alessiofrittoli/math-utils/blob/master/docs/random/README.md)
 	- [Types](https://github.com/alessiofrittoli/math-utils/blob/master/docs/types/README.md)
-- [ESLint](#eslint)
-- [Jest](#jest)
+- [Development](#development)
+	- [ESLint](#eslint)
+	- [Jest](#jest)
+- [Contributing](#contributing)
 - [Security](#security)
 - [Credits](#made-with-)
 
@@ -40,7 +42,31 @@ or using `pnpm`
 pnpm i @alessiofrittoli/math-utils
 ```
 
-### [ESLint](https://www.npmjs.com/package/eslint)
+---
+
+### Development
+
+#### Install depenendencies
+
+```bash
+npm install
+```
+
+or using `pnpm`
+
+```bash
+pnpm i
+```
+
+#### Build your source code
+
+Run the following command to build code for distribution.
+
+```bash
+pnpm build
+```
+
+#### [ESLint](https://www.npmjs.com/package/eslint)
 
 warnings / errors check.
 
@@ -48,16 +74,22 @@ warnings / errors check.
 pnpm lint
 ```
 
-### [Jest](https://npmjs.com/package/jest)
+#### [Jest](https://npmjs.com/package/jest)
 
 Run all the defined test suites by running the following:
 
 ```bash
 # Run tests and watch file changes.
-pnpm test
+pnpm test:watch
+
+# Run tests and watch file changes with jest-environment-jsdom.
+pnpm test:jsdom
 
 # Run tests in a CI environment.
 pnpm test:ci
+
+# Run tests in a CI environment with jest-environment-jsdom.
+pnpm test:ci:jsdom
 ```
 
 You can eventually run specific suits like so:
@@ -71,6 +103,23 @@ pnpm test:interpolation
 # or
 pnpm test:random
 ```
+
+Run tests with coverage.
+
+An HTTP server is then started to serve coverage files from `./coverage` folder.
+
+⚠️ You may see a blank page the first time you run this command. Simply refresh the browser to see the updates.
+
+```bash
+test:coverage:serve
+```
+
+---
+
+### Contributing
+
+Contributions are truly welcome!\
+Please refer to the [Contributing Doc](./CONTRIBUTING.md) for more information on how to start contributing to this project.
 
 ---
 
