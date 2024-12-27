@@ -1,6 +1,6 @@
 # Math Utils 🤓
 
-Version 1.1.0
+Version 1.2.0
 
 [![Coverage Status](https://coveralls.io/repos/github/alessiofrittoli/math-utils/badge.svg)](https://coveralls.io/github/alessiofrittoli/math-utils) [![Dependencies](https://img.shields.io/librariesio/release/npm/%40alessiofrittoli%2Fmath-utils)](https://libraries.io/npm/%40alessiofrittoli%2Fmath-utils)
 
