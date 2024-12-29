@@ -33,24 +33,24 @@
 			"require": "./dist/index.js"
 		},
 		"./format": {
-			"types": "./dist/format.d.ts",
-			"import": "./dist/format.mjs",
-			"require": "./dist/format.js"
+			"types": "./dist/format/index.d.ts",
+			"import": "./dist/format/index.mjs",
+			"require": "./dist/format/index.js"
 		},
 		"./helpers": {
-			"types": "./dist/helpers.d.ts",
-			"import": "./dist/helpers.mjs",
-			"require": "./dist/helpers.js"
+			"types": "./dist/helpers/index.d.ts",
+			"import": "./dist/helpers/index.mjs",
+			"require": "./dist/helpers/index.js"
 		},
 		"./interpolation": {
-			"types": "./dist/interpolation.d.ts",
-			"import": "./dist/interpolation.mjs",
-			"require": "./dist/interpolation.js"
+			"types": "./dist/interpolation/index.d.ts",
+			"import": "./dist/interpolation/index.mjs",
+			"require": "./dist/interpolation/index.js"
 		},
 		"./random": {
-			"types": "./dist/random.d.ts",
-			"import": "./dist/random.mjs",
-			"require": "./dist/random.js"
+			"types": "./dist/random/index.d.ts",
+			"import": "./dist/random/index.mjs",
+			"require": "./dist/random/index.js"
 		},
 		"./types": {
 			"types": "./dist/types.d.ts"
