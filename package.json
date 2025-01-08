@@ -32,6 +32,11 @@
 			"import": "./dist/index.mjs",
 			"require": "./dist/index.js"
 		},
+		"./conversion": {
+			"types": "./dist/conversion/index.d.ts",
+			"import": "./dist/conversion/index.mjs",
+			"require": "./dist/conversion/index.js"
+		},
 		"./format": {
 			"types": "./dist/format/index.d.ts",
 			"import": "./dist/format/index.mjs",
@@ -98,5 +103,8 @@
 		"tsup": "^8.3.5",
 		"typescript": "^5.7.3",
 		"typescript-eslint": "^8.19.1"
+	},
+	"dependencies": {
+		"@alessiofrittoli/web-utils": "^0.2.0"
 	}
 }

@@ -7,6 +7,10 @@ settings:
 importers:
 
   .:
+    dependencies:
+      '@alessiofrittoli/web-utils':
+        specifier: ^0.2.0
+        version: 0.2.0
     devDependencies:
       '@alessiofrittoli/node-scripts':
         specifier: ^2.2.1
@@ -64,6 +68,9 @@ packages:
 
   '@alessiofrittoli/node-scripts@2.2.1':
     resolution: {integrity: sha512-VP9pUyrPhudlv/1UOxb1BfisKOSAAl/0H8beM5Udn3ddMHPVbrP4ul1rLqDbHWsFzePmpOiOsvOpEAsj2YPnWA==}
+
+  '@alessiofrittoli/web-utils@0.2.0':
+    resolution: {integrity: sha512-8rTDSBu3x8ek+9T9GHX3yU3tpuJGdu07H94lWneXweiK/cA4CI2hz8k+PhmPo43XpjKOVDGrL7U0BuSORMdOSw==}
 
   '@ampproject/remapping@2.3.0':
     resolution: {integrity: sha512-30iZtAPgz+LTIYoeivqYo853f02jBYSd5uGnGpkFV0M3xOt9aN73erkgYAmZU43x4VfqcnLxW9Kpg3R5LC4YYw==}
@@ -2407,6 +2414,8 @@ packages:
 snapshots:
 
   '@alessiofrittoli/node-scripts@2.2.1': {}
+
+  '@alessiofrittoli/web-utils@0.2.0': {}
 
   '@ampproject/remapping@2.3.0':
     dependencies:
