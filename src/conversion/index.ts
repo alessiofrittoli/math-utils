@@ -79,13 +79,15 @@ export const getMapRatio = <
 	}
 	
 	Object.keys( _map ).map( mapKey => {
-		const denominator	= _map[ mapKey ]!
-		let newValue		= numerator / denominator
+		const denominator = _map[ mapKey ]!
+		let value = numerator / denominator
 
-		if ( isNaN( newValue ) ) newValue = 1
-		if ( newValue === Infinity || newValue === -Infinity ) newValue = 0
+		// if 0 / 0
+		if ( isNaN( value ) ) value = 1
+		// if X / 0 || X / -0
+		if ( value === Infinity || value === -Infinity ) value = 0
 		
-		;( _map[ mapKey ] as number ) = newValue
+		;( _map[ mapKey ] as number ) = value
 	} )
 
 	return _map
@@ -169,16 +171,27 @@ export type ConvertedUnit<T extends ConversionMap> = Record<keyof T, Conversion>
 export const convertTo = <T extends ConversionMap>( input: number, map: T ) => (
 	getTypedMap<ConvertedUnit<T>>(
 		Object.keys( map ).map( unit => {
-			const ratio	= map[ unit ] as number
-			let value	= input / ratio
+			const ratio	= map[ unit ]
 
-			if (
-				isNaN( value ) ||
-				value === Infinity ||
-				value === -Infinity
-			) {
-				value = 0
+			if ( ratio == null || isNaN( ratio ) ) {
+				let message = (
+					`The provided '${ String( unit ) }' ratio is not a number.`
+				)
+				if ( typeof ratio !== 'bigint' && typeof ratio !== 'number' ) {
+					message += ` ${ typeof ratio } given.`
+				}
+				throw new TypeError( message )
 			}
+
+			let value = input / ratio
+			if (
+				// if 0 / 0
+				isNaN( value ) ||
+				// if X / 0
+				value === Infinity ||
+				// if X / -0
+				value === -Infinity
+			) value = 0
 			return [ unit, { value, ratio } ]
 		} )
 	)
