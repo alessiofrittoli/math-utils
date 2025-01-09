@@ -20,6 +20,7 @@ Everything is exported from the root of this library but specific paths can be u
 
 - [Getting started](#getting-started)
 - Utilities
+	- [Conversion functions](https://github.com/alessiofrittoli/math-utils/blob/master/docs/conversion/README.md)
 	- [Formatting functions](https://github.com/alessiofrittoli/math-utils/blob/master/docs/format/README.md)
 	- [Helpers functions](https://github.com/alessiofrittoli/math-utils/blob/master/docs/helpers/README.md)
 	- [Interpolation functions](https://github.com/alessiofrittoli/math-utils/blob/master/docs/interpolation/README.md)
