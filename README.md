@@ -1,8 +1,14 @@
 # Math Utils 🤓
 
-Version 1.3.0
+[![NPM Latest Version][version-badge]][npm-url] [![Coverage Status][coverage-badge]][coverage-url] [![NPM Monthly Downloads][downloads-badge]][npm-url] [![Dependencies][deps-badge]][deps-url]
 
-[![Coverage Status](https://coveralls.io/repos/github/alessiofrittoli/math-utils/badge.svg)](https://coveralls.io/github/alessiofrittoli/math-utils) [![Dependencies](https://img.shields.io/librariesio/release/npm/%40alessiofrittoli%2Fmath-utils)](https://libraries.io/npm/%40alessiofrittoli%2Fmath-utils)
+[version-badge]: https://img.shields.io/npm/v/%40alessiofrittoli%2Fmath-utils
+[npm-url]: https://npmjs.org/package/%40alessiofrittoli%2Fmath-utils
+[coverage-badge]: https://coveralls.io/repos/github/alessiofrittoli/math-utils/badge.svg
+[coverage-url]: https://coveralls.io/github/alessiofrittoli/math-utils
+[downloads-badge]: https://img.shields.io/npm/dm/%40alessiofrittoli%2Fmath-utils.svg
+[deps-badge]: https://img.shields.io/librariesio/release/npm/%40alessiofrittoli%2Fmath-utils
+[deps-url]: https://libraries.io/npm/%40alessiofrittoli%2Fmath-utils
 
 ## Lightweight TypeScript math utility functions
 
