@@ -121,4 +121,30 @@ describe( 'convertTo', () => {
 		expect( result.get( 'foot' ).value ).toBe( 328.0839895013123 )
 	} )
 
+
+	it( 'returns `0` when conversion result is NaN or +/-Infinity', () => {
+		const result = convertTo( 100, { a: 0, b: -0 } )
+		expect( result.get( 'a' ).value ).toBe( 0 )
+	} )
+	
+	
+	it( 'throws a TypeError for invalid ratio value', () => {
+		expect( () => convertTo( 100, { a: NaN, b: 20 } ) )
+			.toThrow(
+				`The provided 'a' ratio is not a number.`
+			)
+		
+		// @ts-expect-error negative testing
+		expect( () => convertTo( 100, { a: 'string', b: 20 }, 'a' ) )
+			.toThrow(
+				`The provided 'a' ratio is not a number. string given.`
+			)
+		
+		// @ts-expect-error negative testing
+		expect( () => convertTo( 100, { a: null, b: 20 }, 'a' ) )
+			.toThrow(
+				`The provided 'a' ratio is not a number. object given.`
+			)
+	} )
+
 } )
