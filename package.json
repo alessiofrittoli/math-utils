@@ -80,7 +80,8 @@
 		"test:coverage:jsdom:serve": "JSDOM=true pnpm test:coverage:serve",
 		"test:jest": "pnpm test:watch jest.test.ts",
 		"test:jest:jsdom": "JSDOM=true pnpm test:watch:jest",
-		"test:format": "pnpm test:watch format.test.ts",
+		"test:format": "pnpm test:watch format/index.test.ts",
+		"test:format:bytes": "pnpm test:watch format/bytes.test.ts",
 		"test:helpers": "pnpm test:watch helpers.test.ts",
 		"test:interpolation": "pnpm test:watch interpolation.test.ts",
 		"test:random": "pnpm test:watch random.test.ts"
