@@ -1,5 +1,6 @@
 export * from './conversion'
 export * from './format'
+export * from './format/bytes'
 export * from './helpers'
 export * from './interpolation'
 export * from './random'

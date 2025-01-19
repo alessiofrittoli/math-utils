@@ -1,6 +1,6 @@
 {
 	"name": "@alessiofrittoli/math-utils",
-	"version": "1.4.0",
+	"version": "1.5.0",
 	"description": "Lightweight TypeScript math utility functions",
 	"author": {
 		"name": "Alessio Frittoli",
@@ -41,6 +41,11 @@
 			"types": "./dist/format/index.d.ts",
 			"import": "./dist/format/index.mjs",
 			"require": "./dist/format/index.js"
+		},
+		"./format/bytes": {
+			"types": "./dist/format/bytes/index.d.ts",
+			"import": "./dist/format/bytes/index.mjs",
+			"require": "./dist/format/bytes/index.js"
 		},
 		"./helpers": {
 			"types": "./dist/helpers/index.d.ts",
