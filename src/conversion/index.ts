@@ -169,7 +169,7 @@ export type ConvertedUnit<T extends ConversionMap> = Record<keyof T, Conversion>
  * ```
  */
 export const convertTo = <T extends ConversionMap>( input: number, map: T ) => (
-	getTypedMap<ConvertedUnit<T>>(
+	getTypedMap<ConvertedUnit<T>, false>(
 		Object.keys( map ).map( unit => {
 			const ratio	= map[ unit ]
 
