@@ -228,3 +228,15 @@ export const hexToRGBA = ( hex: string, opacity?: number ) => {
     return [ r, g, b, a ] as const
 
 }
+
+
+/**
+ * Conver hex color to rgba.
+ * 
+ * @param	hex		A valid hex color code.
+ * @param	opacity ( Optional ) The opacity value 0~1. If not provided, it will be extract from the hex color code.
+ * @returns	The rgba color. Throw a new Exception if given color is not valid.
+ */
+export const hexToRGBAString = ( hex: string, opacity?: number ) => (
+	`rgba(${ hexToRGBA( hex, opacity ).join( ',' ) })`
+)
