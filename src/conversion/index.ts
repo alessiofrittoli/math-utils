@@ -196,3 +196,35 @@ export const convertTo = <T extends ConversionMap>( input: number, map: T ) => (
 		} )
 	)
 )
+
+
+/**
+ * Conver hex color to rgba.
+ * 
+ * @param	hex		A valid hex color code.
+ * @param	opacity ( Optional ) The opacity value 0~1. If not provided, it will be extract from the hex color code.
+ * @returns	The rgba color values. Throw a new Exception if given color is not valid.
+ */
+export const hexToRGBA = ( hex: string, opacity?: number ) => {
+
+	if ( ! /^#([A-Fa-f0-9]{3}){1,2}([A-Fa-f0-9]{2})?$/.test( hex ) ) throw new Error( 'Bad Hex' )
+
+	let c: string[]
+
+	// Remove `#` and split into individual characters
+	c = hex.substring( 1 ).split( '' )
+
+	// Expand short hex codes (e.g., `#FFF` → `#FFFFFF`)
+	if ( c.length === 3 ) {
+		c = [ c[ 0 ]!, c[ 0 ]!, c[ 1 ]!, c[ 1 ]!, c[ 2 ]!, c[ 2 ]! ]
+	}
+
+	// Extract RGB and optional alpha
+    const r = parseInt( `${ c[ 0 ] }${ c[ 1 ] }`, 16 )
+    const g = parseInt( `${ c[ 2 ] }${ c[ 3 ] }`, 16 )
+    const b = parseInt( `${ c[ 4 ] }${ c[ 5 ] }`, 16 )
+    const a = opacity || ( c.length === 8 ? parseInt( `${ c[ 6 ] }${ c[ 7 ] }`, 16 ) / 255 : 1 )
+
+    return [ r, g, b, a ] as const
+
+}
