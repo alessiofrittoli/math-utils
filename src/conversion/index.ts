@@ -240,3 +240,15 @@ export const hexToRGBA = ( hex: string, opacity?: number ) => {
 export const hexToRGBAString = ( hex: string, opacity?: number ) => (
 	`rgba(${ hexToRGBA( hex, opacity ).join( ',' ) })`
 )
+
+
+/**
+ * Convert hex color to ANSI string.
+ * @param	hex		A valid hex color code.
+ * @param	code	The ANSI code. Usually `38` for text colors. `48` for background colors.
+ * @returns The ANSI formatted string.
+ */
+export const hexToAnsi = ( hex: string, code: number ) => {
+	const [ r, g, b ] = hexToRGBA( hex )
+	return [ `\x1b[${ code }`, 2, r, g, `${ b }m` ].join( ';' )
+}
