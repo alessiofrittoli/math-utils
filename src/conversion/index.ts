@@ -202,10 +202,10 @@ export const convertTo = <T extends ConversionMap>( input: number, map: T ) => (
  * Conver hex color to rgba.
  * 
  * @param	hex		A valid hex color code.
- * @param	opacity ( Optional ) The opacity value 0~1. If not provided, it will be extract from the hex color code.
+ * @param	alpha	( Optional ) The alpha value 0~1. If not provided, it will be extracted from the hex color code alpha channel.
  * @returns	The rgba color values. Throw a new Exception if given color is not valid.
  */
-export const hexToRGBA = ( hex: string, opacity?: number ) => {
+export const hexToRGBA = ( hex: string, alpha?: number ) => {
 
 	if ( ! /^#([A-Fa-f0-9]{3}){1,2}([A-Fa-f0-9]{2})?$/.test( hex ) ) throw new Error( 'Bad Hex' )
 
@@ -223,7 +223,7 @@ export const hexToRGBA = ( hex: string, opacity?: number ) => {
     const r = parseInt( `${ c[ 0 ] }${ c[ 1 ] }`, 16 )
     const g = parseInt( `${ c[ 2 ] }${ c[ 3 ] }`, 16 )
     const b = parseInt( `${ c[ 4 ] }${ c[ 5 ] }`, 16 )
-    const a = opacity || ( c.length === 8 ? parseInt( `${ c[ 6 ] }${ c[ 7 ] }`, 16 ) / 255 : 1 )
+    const a = alpha || ( c.length === 8 ? parseInt( `${ c[ 6 ] }${ c[ 7 ] }`, 16 ) / 255 : 1 )
 
     return [ r, g, b, a ] as const
 
@@ -234,21 +234,22 @@ export const hexToRGBA = ( hex: string, opacity?: number ) => {
  * Conver hex color to rgba.
  * 
  * @param	hex		A valid hex color code.
- * @param	opacity ( Optional ) The opacity value 0~1. If not provided, it will be extract from the hex color code.
+ * @param	alpha	( Optional ) The alpha value 0~1. If not provided, it will be extracted from the hex color code alpha channel.
  * @returns	The rgba color. Throw a new Exception if given color is not valid.
  */
-export const hexToRGBAString = ( hex: string, opacity?: number ) => (
-	`rgba(${ hexToRGBA( hex, opacity ).join( ',' ) })`
+export const hexToRGBAString = ( hex: string, alpha?: number ) => (
+	`rgba(${ hexToRGBA( hex, alpha ).join( ',' ) })`
 )
 
 
 /**
- * Convert hex color to ANSI string.
+ * Convert hex color to ANSI true-color string.
+ * 
  * @param	hex		A valid hex color code.
  * @param	code	The ANSI code. Usually `38` for text colors. `48` for background colors.
  * @returns The ANSI formatted string.
  */
-export const hexToAnsi = ( hex: string, code: number ) => {
+export const hexToAnsiTrueColor = ( hex: string, code: number ) => {
 	const [ r, g, b ] = hexToRGBA( hex )
 	return [ `\x1b[${ code }`, 2, r, g, `${ b }m` ].join( ';' )
 }

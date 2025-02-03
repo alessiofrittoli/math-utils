@@ -1,5 +1,5 @@
 import { convertTo, getMapRatio } from '@/conversion'
-import { hexToRGBA, hexToRGBAString, hexToAnsi } from '@/conversion'
+import { hexToRGBA, hexToRGBAString, hexToAnsiTrueColor } from '@/conversion'
 
 
 describe( 'getMapRatio', () => {
@@ -154,8 +154,8 @@ describe( 'convertTo', () => {
 describe( 'hexToRGBA', () => {
 
 	it( 'converts a HEX color string to RGBA values', () => {
-		expect( hexToRGBA( '#00A67D6b' ) )
-			.toEqual( [ 0, 166, 125, 0.4196078431372549 ] )
+		expect( hexToRGBA( '#00A67D' ) )
+			.toEqual( [ 0, 166, 125, 1 ] )
 	} )
 
 	it( 'converts short hex color codes', () => {
@@ -165,7 +165,7 @@ describe( 'hexToRGBA', () => {
 	
 	
 	it( 'correctly extracts the alpha channel from the hex color code', () => {
-		expect( hexToRGBA( '#00A67D6b' ) )
+		expect( hexToRGBA( '#00A67D6B' ) )
 			.toEqual( [ 0, 166, 125, 0.4196078431372549 ] )
 	} )
 	
@@ -207,8 +207,20 @@ describe( 'hexToRGBAString', () => {
 describe( 'hexToAnsi', () => {
 
 	it( 'converts hex color code to ANSI string', () => {
-		expect( hexToAnsi( '#00A67D6b', 38 ) )
+		expect( hexToAnsiTrueColor( '#00A67D', 38 ) )
 			.toBe( '\x1b[38;2;0;166;125m' )
+	} )
+
+
+	it( 'ignores alpha channel wich is not supported in ANSI strings', () => {
+		expect( hexToAnsiTrueColor( '#00A67D6B', 38 ) )
+			.toBe( '\x1b[38;2;0;166;125m' )
+	} )
+	
+	
+	it( 'correctly assign the given code', () => {
+		expect( hexToAnsiTrueColor( '#00A67D6B', 48 ) )
+			.toBe( '\x1b[48;2;0;166;125m' )
 	} )
 
 } )

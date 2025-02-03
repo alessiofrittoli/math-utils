@@ -228,3 +228,230 @@ console.log( result.get( 'foot' ) ) // 100m in feet -> { value: 328.083989501312
 ```
 
 </details>
+
+---
+
+### `hexToRGBA`
+
+Converts HEX color code to RGBA values.
+
+<details>
+
+<summary>Parameters</summary>
+
+| Parameter | Type     | Description |
+|-----------|----------|-------------|
+| `hex`     | `string` | A valid hex color code. |
+| `alpha`   | `number` | (Optional) The alpha value 0~1. If not provided, it will be extracted from the hex color code alpha channel. |
+
+</details>
+
+---
+
+<details>
+
+<summary>Returns</summary>
+
+Type: `[ number, number, number, number ]`
+
+A tuple Array where each number is the RGBA channel.
+
+</details>
+
+---
+
+<details>
+
+<summary>Throws</summary>
+
+- `Error`:
+    Thrown if the given HEX color code is not valid.
+
+</details>
+
+---
+
+<details>
+
+<summary>Usage</summary>
+
+#### Convert HEX color string to RGBA values
+
+```ts
+import { hexToRGBA } from '@alessiofrittoli/math-utils'
+// or
+import { hexToRGBA } from '@alessiofrittoli/math-utils/conversion'
+
+console.log( hexToRGBA( '#000' ) )
+// Outputs: [ 0, 0, 0, 1 ]
+
+console.log( hexToRGBA( '#00A67D' ) )
+// Outputs: [ 0, 166, 125, 1 ]
+
+console.log( hexToRGBA( '#00A67D6B' ) )
+// Outputs: [ 0, 166, 125, 0.4196078431372549 ]
+```
+
+---
+
+#### Assign custom alpha channel value
+
+```ts
+import { hexToRGBA } from '@alessiofrittoli/math-utils'
+// or
+import { hexToRGBA } from '@alessiofrittoli/math-utils/conversion'
+
+console.log( hexToRGBA( '#00A67D', 0.3 ) )
+// Outputs: [ 0, 166, 125, 0.3 ]
+
+console.log( hexToRGBA( '#00A67D6B', 0.8 ) ) // `#00A67D6B` has `0.4196078431372549` as alpha channel value
+// Outputs: [ 0, 166, 125, 0.8 ]
+```
+
+</details>
+
+---
+
+### `hexToRGBAString`
+
+Converts HEX color code to RGBA CSS string.
+
+<details>
+
+<summary>Parameters</summary>
+
+| Parameter | Type     | Description |
+|-----------|----------|-------------|
+| `hex`     | `string` | A valid hex color code. |
+| `alpha`   | `number` | (Optional) The alpha value 0~1. If not provided, it will be extracted from the hex color code alpha channel. |
+
+</details>
+
+---
+
+<details>
+
+<summary>Returns</summary>
+
+Type: `string`
+
+The formatted RGBA CSS string as `rgba({r},{g},{b},{a}})`.
+
+</details>
+
+---
+
+<details>
+
+<summary>Throws</summary>
+
+- `Error`:
+    Thrown if the given HEX color code is not valid.
+
+</details>
+
+---
+
+<details>
+
+<summary>Usage</summary>
+
+#### Convert HEX color string to RGBA CSS string
+
+```ts
+import { hexToRGBAString } from '@alessiofrittoli/math-utils'
+// or
+import { hexToRGBAString } from '@alessiofrittoli/math-utils/conversion'
+
+console.log( hexToRGBAString( '#000' ) )
+// Outputs: 'rgba(0,0,0,1)'
+
+console.log( hexToRGBAString( '#00A67D' ) )
+// Outputs: 'rgba(0,166,125,1)'
+
+console.log( hexToRGBAString( '#00A67D6B' ) )
+// Outputs: 'rgba(0,166,125,0.4196078431372549)'
+```
+
+---
+
+#### Assign custom alpha channel value
+
+```ts
+import { hexToRGBAString } from '@alessiofrittoli/math-utils'
+// or
+import { hexToRGBAString } from '@alessiofrittoli/math-utils/conversion'
+
+console.log( hexToRGBAString( '#00A67D', 0.3 ) )
+// Outputs: 'rgba(0,166,125,0.3)'
+
+console.log( hexToRGBAString( '#00A67D6B', 0.8 ) ) // `#00A67D6B` has `0.4196078431372549` as alpha channel value
+// Outputs: 'rgba(0,166,125,0.8)'
+```
+
+</details>
+
+---
+
+### `hexToAnsiTrueColor`
+
+Converts HEX color code to RGB ANSI true-color string.
+
+<details>
+
+<summary>Parameters</summary>
+
+| Parameter | Type     | Description |
+|-----------|----------|-------------|
+| `hex`     | `string` | A valid hex color code. |
+| `code`    | `number` | The ANSI code. Usually `38` for text colors. `48` for background colors. |
+
+</details>
+
+---
+
+<details>
+
+<summary>Returns</summary>
+
+Type: `string`
+
+The formatted RGB ANSI string as `\x1b[{code};2;{r};{g};{b}m`.
+
+</details>
+
+---
+
+<details>
+
+<summary>Throws</summary>
+
+- `Error`:
+    Thrown if the given HEX color code is not valid.
+
+</details>
+
+---
+
+<details>
+
+<summary>Usage</summary>
+
+#### Convert HEX color string to RGB ANSI string
+
+```ts
+import { hexToAnsiTrueColor } from '@alessiofrittoli/math-utils'
+// or
+import { hexToAnsiTrueColor } from '@alessiofrittoli/math-utils/conversion'
+
+console.log( hexToAnsiTrueColor( '#00A67D', 38 ) ) // text color
+// Outputs: '\x1b[38;2;0;166;125m'
+
+console.log( hexToAnsiTrueColor( '#00A67D', 48 ) ) // background color
+// Outputs: '\x1b[48;2;0;166;125m'
+
+console.log( hexToAnsiTrueColor( '#00A67D6B', 38 ) ) // alpha channel is not supported in ANSI true-color strings.
+// Outputs: '\x1b[38;2;0;166;125m'
+```
+
+</details>
