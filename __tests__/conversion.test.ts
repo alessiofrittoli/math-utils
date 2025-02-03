@@ -1,4 +1,5 @@
 import { convertTo, getMapRatio } from '@/conversion'
+import { hexToRGBA, hexToRGBAString, hexToAnsiTrueColor } from '@/conversion'
 
 
 describe( 'getMapRatio', () => {
@@ -145,6 +146,81 @@ describe( 'convertTo', () => {
 			.toThrow(
 				`The provided 'a' ratio is not a number. object given.`
 			)
+	} )
+
+} )
+
+
+describe( 'hexToRGBA', () => {
+
+	it( 'converts a HEX color string to RGBA values', () => {
+		expect( hexToRGBA( '#00A67D' ) )
+			.toEqual( [ 0, 166, 125, 1 ] )
+	} )
+
+	it( 'converts short hex color codes', () => {
+		expect( hexToRGBA( '#000' ) )
+			.toEqual( [ 0, 0, 0, 1 ] )
+	} )
+	
+	
+	it( 'correctly extracts the alpha channel from the hex color code', () => {
+		expect( hexToRGBA( '#00A67D6B' ) )
+			.toEqual( [ 0, 166, 125, 0.4196078431372549 ] )
+	} )
+	
+	
+	it( 'fallback alpha channel value to 1 if a short hex color code has been provided', () => {
+		expect( hexToRGBA( '#FFF' ) )
+			.toEqual( [ 255, 255, 255, 1 ] )
+	} )
+	
+	
+	it( 'allows custom alpha channel overriding', () => {
+		expect( hexToRGBA( '#00A67D6b', 0.5 ) )
+			.toEqual( [ 0, 166, 125, 0.5 ] )
+	} )
+	
+	
+	it( 'throws an Error if an invalid hex color code has been provided', () => {
+		expect( () => hexToRGBA( 'FFF' ) )
+			.toThrow( 'Bad Hex' )
+		expect( () => hexToRGBA( '#FFFF' ) )
+			.toThrow( 'Bad Hex' )
+		expect( () => hexToRGBA( '#GGGGGG' ) )
+			.toThrow( 'Bad Hex' )
+	} )
+
+} )
+
+
+describe( 'hexToRGBAString', () => {
+
+	it( 'converts hex color code to rgba CSS value', () => {
+		expect( hexToRGBAString( '#00A67D6b' ) )
+			.toBe( `rgba(0,166,125,0.4196078431372549)` )
+	} )
+
+} )
+
+
+describe( 'hexToAnsi', () => {
+
+	it( 'converts hex color code to ANSI string', () => {
+		expect( hexToAnsiTrueColor( '#00A67D', 38 ) )
+			.toBe( '\x1b[38;2;0;166;125m' )
+	} )
+
+
+	it( 'ignores alpha channel wich is not supported in ANSI strings', () => {
+		expect( hexToAnsiTrueColor( '#00A67D6B', 38 ) )
+			.toBe( '\x1b[38;2;0;166;125m' )
+	} )
+	
+	
+	it( 'correctly assign the given code', () => {
+		expect( hexToAnsiTrueColor( '#00A67D6B', 48 ) )
+			.toBe( '\x1b[48;2;0;166;125m' )
 	} )
 
 } )
