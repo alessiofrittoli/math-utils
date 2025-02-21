@@ -17,7 +17,6 @@ export const BitInBytes = {
 	'Gib'	: 134_217_728,			// 1 Gibibit in bytes
 	'Tib'	: 137_438_953_472,		// 1 Tebibit in bytes
 	'Pib'	: 140_737_488_355_328,	// 1 Pebibit in bytes
-
 } as const
 
 
@@ -47,7 +46,7 @@ export const InBytes = {
 
 
 /**
- * Format bytes an human readable format.
+ * Format bytes in a human readable format.
  * 
  * @param bytes		The number of bytes to format.
  * @param bitBased	(Optional) Whether to use bit based outputs. Default: `false`.
