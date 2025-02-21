@@ -1,6 +1,6 @@
 import { formatBytes } from '@/format/bytes'
 
-describe( 'formatByteSize', () => {
+describe( 'formatBytes', () => {
 
 	it( 'returns formatted bytes string', () => {
 
