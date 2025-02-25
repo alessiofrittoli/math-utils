@@ -1,6 +1,6 @@
 {
 	"name": "@alessiofrittoli/math-utils",
-	"version": "1.8.0",
+	"version": "1.9.0",
 	"description": "Lightweight TypeScript math utility functions",
 	"author": {
 		"name": "Alessio Frittoli",
