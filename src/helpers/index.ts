@@ -111,3 +111,19 @@ export const padStart = (
 			.slice( maxLength * -1 )
 	)
 }
+
+
+/**
+ * Check if value is a numeric value.
+ * 
+ * @param	value The value to check.
+ * @returns	`true` if the the given value is a valid number or a valid numeric string, `false` otherwise.
+ */
+export const isNumeric = ( value: string | number ) => (
+	( typeof value === 'number' && ! isNaN( value ) ) ||
+	(
+		typeof value === 'string' &&
+		! isNaN( value as unknown as number ) &&
+		! isNaN( parseFloat( value ) )
+	)
+)
