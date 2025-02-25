@@ -1,4 +1,4 @@
-import { englishOrdinalSuffix, getClosestNumber, getNumbersFromString, padStart, round } from '@/helpers'
+import { englishOrdinalSuffix, getClosestNumber, getNumbersFromString, isNumeric, padStart, round } from '@/helpers'
 
 
 describe( 'round', () => {
@@ -154,6 +154,32 @@ describe( 'padStart', () => {
 
 	it( 'handles custom characters', () => {
 		expect( padStart( 7, 3, '+' ) ).toBe( '++7' )
+	} )
+
+} )
+
+
+describe( 'isNumeric', () => {
+
+	it( 'correctly checks strings', () => {
+
+		expect( isNumeric( '12345' ) )
+			.toBe( true )
+		
+		expect( isNumeric( 'invalid numeric string 12345' ) )
+			.toBe( false )
+		
+	} )
+
+
+	it( 'correctly checks numbers', () => {
+
+		expect( isNumeric( 12345 ) )
+			.toBe( true )
+		
+		expect( isNumeric( Number( 'NaN' ) ) )
+			.toBe( false )
+		
 	} )
 
 } )
