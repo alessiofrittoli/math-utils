@@ -13,8 +13,8 @@ importers:
         version: 1.2.0
     devDependencies:
       '@alessiofrittoli/node-scripts':
-        specifier: ^2.3.0
-        version: 2.3.0
+        specifier: ^2.3.1
+        version: 2.3.1
       '@eslint/js':
         specifier: ^9.22.0
         version: 9.22.0
@@ -78,8 +78,8 @@ packages:
   '@alessiofrittoli/node-scripts@2.2.1':
     resolution: {integrity: sha512-VP9pUyrPhudlv/1UOxb1BfisKOSAAl/0H8beM5Udn3ddMHPVbrP4ul1rLqDbHWsFzePmpOiOsvOpEAsj2YPnWA==}
 
-  '@alessiofrittoli/node-scripts@2.3.0':
-    resolution: {integrity: sha512-0v14p/OgZTkN2DjHvS9HuN83Dj9bjoWUwwA1EGzDLv631z6KRiGEEbzdNGoqINuonwupqkM4AGZaJ9FEj8xE7Q==}
+  '@alessiofrittoli/node-scripts@2.3.1':
+    resolution: {integrity: sha512-lREwbQ1LWI2G1qb42NKrfAVELrKLD91e50mVTVovc2l6ZVmapu/heNeKB+txgqONzk5VsDCMb+qAWGYqTiWHDA==}
 
   '@alessiofrittoli/type-utils@1.5.0':
     resolution: {integrity: sha512-UCc2S8PCYaWS9uaKwF3k8MkU1vPqulnGk08NFDBi+dmjFQvyGCkG1mkSvfQjjXz0XOzh5zgn+mVqP+fZLF2CcQ==}
@@ -2486,7 +2486,7 @@ snapshots:
 
   '@alessiofrittoli/node-scripts@2.2.1': {}
 
-  '@alessiofrittoli/node-scripts@2.3.0': {}
+  '@alessiofrittoli/node-scripts@2.3.1': {}
 
   '@alessiofrittoli/type-utils@1.5.0':
     dependencies:
