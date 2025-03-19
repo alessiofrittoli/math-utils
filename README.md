@@ -2,6 +2,8 @@
 
 [![NPM Latest Version][version-badge]][npm-url] [![Coverage Status][coverage-badge]][coverage-url] [![NPM Monthly Downloads][downloads-badge]][npm-url] [![Dependencies][deps-badge]][deps-url]
 
+[![GitHub Sponsor][sponsor-badge]][sponsor-url]
+
 [version-badge]: https://img.shields.io/npm/v/%40alessiofrittoli%2Fmath-utils
 [npm-url]: https://npmjs.org/package/%40alessiofrittoli%2Fmath-utils
 [coverage-badge]: https://coveralls.io/repos/github/alessiofrittoli/math-utils/badge.svg
@@ -9,6 +11,9 @@
 [downloads-badge]: https://img.shields.io/npm/dm/%40alessiofrittoli%2Fmath-utils.svg
 [deps-badge]: https://img.shields.io/librariesio/release/npm/%40alessiofrittoli%2Fmath-utils
 [deps-url]: https://libraries.io/npm/%40alessiofrittoli%2Fmath-utils
+
+[sponsor-badge]: https://img.shields.io/static/v1?label=Fund%20this%20package&message=%E2%9D%A4&logo=GitHub&color=%23DB61A2
+[sponsor-url]: https://github.com/sponsors/alessiofrittoli
 
 ## Lightweight TypeScript math utility functions
 
@@ -27,6 +32,8 @@ Everything is exported from the root of this library but specific paths can be u
   - [Random number functions](https://github.com/alessiofrittoli/math-utils/blob/master/docs/random/README.md)
   - [Types](https://github.com/alessiofrittoli/math-utils/blob/master/docs/types/README.md)
 - [Development](#development)
+  - [Install depenendencies](#install-depenendencies)
+  - [Build the source code](#build-the-source-code)
   - [ESLint](#eslint)
   - [Jest](#jest)
 - [Contributing](#contributing)
@@ -65,9 +72,9 @@ or using `pnpm`
 pnpm i
 ```
 
-#### Build your source code
+#### Build the source code
 
-Run the following command to build code for distribution.
+Run the following command to test and build code for distribution.
 
 ```bash
 pnpm build
@@ -101,14 +108,11 @@ pnpm test:ci:jsdom
 
 You can eventually run specific suits like so:
 
+- See [`package.json`](./package.json) file scripts for more info.
+
 ```bash
-pnpm test:format
-# or
-pnpm test:helpers
-# or
-pnpm test:interpolation
-# or
-pnpm test:random
+pnpm test:jest
+pnpm test:jest:jsdom
 ```
 
 Run tests with coverage.
@@ -125,8 +129,13 @@ test:coverage:serve
 
 ### Contributing
 
-Contributions are truly welcome!\
+Contributions are truly welcome!
+
 Please refer to the [Contributing Doc](./CONTRIBUTING.md) for more information on how to start contributing to this project.
+
+Help keep this project up to date with [GitHub Sponsor][sponsor-url].
+
+[![GitHub Sponsor][sponsor-badge]][sponsor-url]
 
 ---
 
