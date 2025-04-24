@@ -1,4 +1,5 @@
-import { englishOrdinalSuffix, getClosestNumber, getNumbersFromString, isNumeric, padStart, round } from '@/helpers'
+import { isNumeric, padStart, round, paginate } from '@/helpers'
+import { englishOrdinalSuffix, getClosestNumber, getNumbersFromString } from '@/helpers'
 
 
 describe( 'round', () => {
@@ -180,6 +181,106 @@ describe( 'isNumeric', () => {
 		expect( isNumeric( Number( 'NaN' ) ) )
 			.toBe( false )
 		
+	} )
+
+} )
+
+
+describe( 'paginate', () => {
+
+	it( 'calculates pagination with default values', () => {
+
+		expect( paginate() ).toEqual( {
+			pages		: 0,
+			currentPage	: 0,
+			previousPage: false,
+			nextPage	: false,
+		} )
+		
+	} )
+
+
+	it( 'currentPage starts from `1`', () => {
+
+		const result = paginate( { perPage: 10, offset: 0, total: 100 } )
+		
+		expect( result ).toEqual( {
+			pages		: 10,
+			currentPage	: 1,
+			previousPage: false,
+			nextPage	: 2,
+		} )
+
+	} )
+
+
+	it( 'handles offset greater than total', () => {
+
+		const result = paginate( { perPage: 10, offset: 150, total: 100 } )
+		
+		expect( result ).toEqual( {
+			pages		: 10,
+			currentPage	: 10,
+			previousPage: 9,
+			nextPage	: false,
+		} )
+
+	} )
+
+
+	it( 'handles total less than perPage', () => {
+
+		const result = paginate( { perPage: 20, offset: 0, total: 15 } )
+		
+		expect( result ).toEqual( {
+			pages		: 1,
+			currentPage	: 1,
+			previousPage: false,
+			nextPage	: false,
+		} )
+
+	} )
+
+
+	it( 'handles zero total', () => {
+
+		const result = paginate( { perPage: 10, offset: 0, total: 0 } )
+		
+		expect( result ).toEqual( {
+			pages		: 0,
+			currentPage	: 0,
+			previousPage: false,
+			nextPage	: false,
+		} )
+
+	} )
+
+
+	it( 'calculates pagination with non-zero offset', () => {
+
+		const result = paginate( { perPage: 10, offset: 25, total: 100 } )
+		
+		expect( result ).toEqual( {
+			pages		: 10,
+			currentPage	: 3,
+			previousPage: 2,
+			nextPage	: 4,
+		} )
+
+	} )
+
+
+	it( '`pages` is rounded up when a floating value is retrieved by dividing `total` by `perPage`', () => {
+
+		const result = paginate( { perPage: 12, total: 30 } ) // 30 / 12 === 2.5
+		
+		expect( result ).toEqual( {
+			pages		: 3,
+			currentPage	: 1,
+			previousPage: false,
+			nextPage	: 2,
+		} )
+
 	} )
 
 } )

@@ -127,3 +127,55 @@ export const isNumeric = ( value: string | number ) => (
 		! isNaN( parseFloat( value ) )
 	)
 )
+
+
+export interface PaginateOptions
+{
+	/** Defines elements count per page. */
+	perPage?: number
+	/** Defines the elements to skip. */
+	offset?: number
+	/** Defines the total available elements. */
+	total?: number
+}
+
+export interface Pagination
+{
+	/** The number of pages. */
+	pages: number
+	/** The current page. */
+	currentPage: number
+	/** The previous page. */
+	previousPage: number | false
+	/** The next page. */
+	nextPage: number | false
+}
+
+
+/**
+ * Get pagination informations based on the given options.
+ * 
+ * @param options An object defining pagination input data. See {@link PaginateOptions} for more information.
+ * @returns An object containing pagination informations based on the given options. See {@link Pagination} for more information.
+ */
+export const paginate = ( options: PaginateOptions = {} ): Pagination => {
+
+	const {
+		offset	= 0,
+		total	= 0,
+		perPage	= 0,
+	} = options
+
+	const _perPage	= perPage || total
+	const _offset	= Math.min( total, offset )
+
+	const pages			= Math.ceil( total / _perPage ) || 0
+	const currentPage	= pages ? Math.min( pages, Math.floor( _offset / _perPage + 1 ) ) : 0
+	const previousPage	= currentPage > 1 ? currentPage - 1 : false
+	const nextPage		= currentPage !== pages ? Math.min( pages, currentPage + 1 ) : false
+
+	return {
+		pages, currentPage, previousPage, nextPage
+	}
+
+}

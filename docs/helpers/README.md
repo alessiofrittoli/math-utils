@@ -2,7 +2,7 @@
 
 [🔙 Back](../../README.md)
 
-### round
+### `round`
 
 Rounds a number to a specified number of decimal places.
 
@@ -87,7 +87,7 @@ round( 123456.789, 1 )
 
 ---
 
-### getClosestNumber
+### `getClosestNumber`
 
 Finds the closest number to a target value from a given array of numbers.
 
@@ -204,7 +204,7 @@ getClosestNumber( [ 1, -1 ], 0 )
 
 ---
 
-### getNumbersFromString
+### `getNumbersFromString`
 
 Extracts numeric data from a string, returning both the concatenated digits as a single number and an array of grouped numeric values.
 
@@ -301,7 +301,7 @@ getNumbersFromString( 'Order #123-456. Delivery in 7 days.' )
 
 ---
 
-### englishOrdinalSuffix
+### `englishOrdinalSuffix`
 
 Determines the English ordinal suffix (`st`, `nd`, `rd`, `th`) for a given number.
 
@@ -386,7 +386,7 @@ englishOrdinalSuffix( 123 ) // Output: 'rd'
 
 ---
 
-### padStart
+### `padStart`
 
 The `padStart` function adds padding to the left of a given value (either a string or a number) until it reaches the specified length.\
 This function replicates the behavior of [String.prototype.padStart()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/padStart) but allows for more customized use cases.
@@ -469,7 +469,7 @@ console.log( padStart( 7, 3, '+' ) )
 
 ---
 
-### isNumeric
+### `isNumeric`
 
 The `isNumeric` function check whether the given value is a valid `number` or a valid numeric string.
 
@@ -532,6 +532,78 @@ console.log( isNumeric( 12345 ) )
 
 console.log( isNumeric( Number( 'NaN' ) ) )
 // Outputs: `false`
+```
+
+</details>
+
+---
+
+### `paginate`
+
+The `paginate` function returns pagination informations based on the given options.
+
+<details>
+
+<summary style="cursor:pointer">Parameters</summary>
+
+| Parameter | Type              | Default | Description |
+|-----------|-------------------|---------|-------------|
+| `options` | `PaginateOptions` | `{}`    | An object defining pagination input data. |
+| `options.perPage` | `number`  | `0`     | Defines elements count per page. |
+| `options.offset` | `number`   | `0`     | Defines the elements to skip. |
+| `options.total` | `number`    | `0`     | Defines the total available elements. |
+
+</details>
+
+---
+
+<details>
+
+<summary style="cursor:pointer">Returns</summary>
+
+Type: `Pagination`
+
+An object containing pagination informations based on the given options with the following properties:
+
+| Property       | Type            | Description          |
+|----------------|-----------------|----------------------|
+| `pages`        | `number`        | The number of pages. |
+| `currentPage`  | `number`        | The current page.    |
+| `previousPage` | `number\|false` | The previous page.   |
+| `nextPage`     | `number\|false` | The next page.       |
+
+</details>
+
+---
+
+<details>
+
+<summary style="cursor:pointer">Examples</summary>
+
+###### Importing the function
+
+```ts
+import { paginate } from '@alessiofrittoli/math-utils'
+// or
+import { paginate } from '@alessiofrittoli/math-utils/helpers'
+```
+
+---
+
+###### Get pagination informations
+
+```ts
+console.log( paginate( { perPage: 12, total: 30 } ) )
+// Outputs: { pages: 3, currentPage: 1, previousPage: false, nextPage: 2 }
+```
+
+---
+
+###### Get pagination informations with offset
+
+```ts
+console.log( paginate( { perPage: 12, offset: 12, total: 30 } ) )
+// Outputs: { pages: 3, currentPage: 2, previousPage: 1, nextPage: 3 }
 ```
 
 </details>
