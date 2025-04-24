@@ -127,3 +127,47 @@ export const isNumeric = ( value: string | number ) => (
 		! isNaN( parseFloat( value ) )
 	)
 )
+
+
+export interface PaginateOptions
+{
+	/** Defines elements count per page. */
+	perPage?: number
+	/** Defines the elements to skip. */
+	offset?: number
+	/** Defines the total available elements. */
+	total?: number
+}
+
+export interface Pagination
+{
+	/** The number of pages. */
+	pages: number
+	/** The current page. */
+	currentPage: number
+	/** The previus page. */
+	previousPage: number | false
+	/** The next page. */
+	nextPage: number | false
+}
+
+
+export const paginate = ( {
+	perPage	= 0,
+	offset	= 0,
+	total	= 0,
+}: PaginateOptions = {} ): Pagination => {
+
+	perPage	||= total
+	offset	= Math.min( total, offset )
+
+	const pages			= Math.ceil( total / perPage ) || 0
+	const currentPage	= pages ? Math.min( pages, Math.floor( offset / perPage + 1 ) ) : 0
+	const previousPage	= currentPage > 1 ? currentPage - 1 : false
+	const nextPage		= currentPage !== pages ? Math.min( pages, currentPage + 1 ) : false
+
+	return {
+		pages, currentPage, previousPage, nextPage
+	}
+
+}
