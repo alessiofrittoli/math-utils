@@ -1,4 +1,4 @@
-import { mtRand, randomNumUUID, randomUUID } from '@/random'
+import { generateUUID, mtRand, randomNumUUID, randomUUID } from '@/random'
 
 describe( 'mtRand', () => {
 
@@ -35,8 +35,23 @@ describe( 'randomNumUUID', () => {
 } )
 
 
-describe( 'randomUUID', () => {
+describe( 'generateUUID', () => {
 
+	it( 'generates a properly formatted v4 UUID string', () => {
+		
+		const result	= generateUUID()
+		const group		= result.split( '-' )
+
+		expect( group.length ).toBe( 5 )
+		expect( group.at( 2 )?.at( 0 ) ).toBe( '4' )
+
+	} )
+
+} )
+
+
+describe( 'randomUUID', () => {
+	
 	afterAll( () => {
 		jest.clearAllMocks()
 	} )
