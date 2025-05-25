@@ -1,3 +1,6 @@
+export type UUID = `${ string }-${ string }-${ string }-${ string }-${ string }`
+
+
 /**
  * Generate a random number between the given range.
  * Equivalent JavaScript function of PHP `mt_rand` function.
@@ -37,7 +40,7 @@ export const randomNumUUID = () => (
 		mtRand( 0, 0x0fff ) | 0x4000, // 16 bits for 'time_hi_and_version', Four most significant bits holds version number 4
 		mtRand( 0, 0x3fff ) | 0x8000, // 16 bits, 8 bits for 'clk_seq_hi_res', 8 bits for 'clk_seq_low', Two most significant bits holds zero and one for variant DCE1.1
 		[ mtRand( 0, 0xffff ), mtRand( 0, 0xffff ), mtRand( 0, 0xffff ) ].join( '' ) // 48 bits for 'node'
-	].join( '-' )
+	].join( '-' ) as UUID
 )
 
 
@@ -50,7 +53,7 @@ export const randomNumUUID = () => (
  * 
  * @returns A random v4 UUID.
  */
-export const generateUUID = (): `${ string }-${ string }-${ string }-${ string }-${ string }` => {
+export const generateUUID = () => {
 
 	/** Current timestamp. */
 	let ts = new Date().getTime()
@@ -82,7 +85,7 @@ export const generateUUID = (): `${ string }-${ string }-${ string }-${ string }
 						.toString( 16 )
 				)
 			} )
-	) as `${ string }-${ string }-${ string }-${ string }-${ string }`
+	) as UUID
 
 }
 
@@ -93,7 +96,7 @@ export const generateUUID = (): `${ string }-${ string }-${ string }-${ string }
  * 
  * @returns Random UUID.
  */
-export const randomUUID = () => (
+export const randomUUID = (): UUID => (
 	typeof crypto !== 'undefined' && 'randomUUID' in crypto && typeof crypto.randomUUID === 'function'
 		? crypto.randomUUID()
 		: generateUUID()

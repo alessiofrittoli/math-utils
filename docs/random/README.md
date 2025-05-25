@@ -76,7 +76,7 @@ Generates a random numeric UUID (Universally Unique Identifier). This function i
 
 <summary>Usage</summary>
 
-The `randomNumUUID` function returns a string representing a random UUID in the format of `xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx`, where x represents a random hexadecimal digit and y is a randomly generated version identifier.
+The `randomNumUUID` function returns a string representing a random UUID.
 
 The usage is discouraged since this function has been designed to be executed as fallback of [crypto.randomUUID()](https://developer.mozilla.org/en-US/docs/Web/API/Crypto/randomUUID). Use [randomUUID](#randomuuid) instead.
 
@@ -86,7 +86,32 @@ import { randomNumUUID } from '@alessiofrittoli/math-utils'
 import { randomNumUUID } from '@alessiofrittoli/math-utils/random'
 
 // Generate a random numeric UUID
-randomNumUUID() // Output: A random UUID like '4e4d7a60-7b6b-4c79-8142-fc21ac3492f8'
+randomNumUUID() // Output: A random UUID like '2781415097-23468-18589-36554-89625858919940'
+```
+
+</details>
+
+---
+
+### generateUUID
+
+Generates a random numeric v4 UUID (Universally Unique Identifier). This function is useful when [crypto.randomUUID()](https://developer.mozilla.org/en-US/docs/Web/API/Crypto/randomUUID) is not available.
+
+<details>
+
+<summary>Usage</summary>
+
+The `generateUUID` function returns a string representing a random UUID in the format of `xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx`, where x represents a random hexadecimal digit and y is a randomly generated version identifier.
+
+The usage is discouraged since this function has been designed to be executed as fallback of [crypto.randomUUID()](https://developer.mozilla.org/en-US/docs/Web/API/Crypto/randomUUID). Use [randomUUID](#randomuuid) instead.
+
+```ts
+import { generateUUID } from '@alessiofrittoli/math-utils'
+// or
+import { generateUUID } from '@alessiofrittoli/math-utils/random'
+
+// Generate a random numeric UUID
+generateUUID() // Output: A random UUID like '4e4d7a60-7b6b-4c79-8142-fc21ac3492f8'
 ```
 
 </details>
