@@ -3,8 +3,8 @@ import { formatNumber } from '.'
 
 export const HumanReadableBitInBytes = {
 	'bits'	: 1 / 8,	// 1 bit in bytes (fractional)
-	'Kb'	: 125,		// 1 Kilobit in bytes
-	'Mb'	: 12.5e+4,	// 1 Megabit in bytes
+	'Kb'	: 1.25e+2,	// 1 Kilobit in bytes
+	'Mb'	: 1.25e+5,	// 1 Megabit in bytes
 	'Gb'	: 1.25e+8,	// 1 Gigabit in bytes
 	'Tb'	: 1.25e+11,	// 1 Terabit in bytes
 	'Pb'	: 1.25e+14,	// 1 Petabit in bytes
@@ -13,10 +13,10 @@ export const HumanReadableBitInBytes = {
 export const BitInBytes = {
 	...HumanReadableBitInBytes,
 	'Kib'	: 128,					// 1 Kibibit in bytes
-	'Mib'	: 131_072,				// 1 Mebibit in bytes
-	'Gib'	: 134_217_728,			// 1 Gibibit in bytes
-	'Tib'	: 137_438_953_472,		// 1 Tebibit in bytes
-	'Pib'	: 140_737_488_355_328,	// 1 Pebibit in bytes
+	'Mib'	: 1.31072e+5,			// 1 Mebibit in bytes
+	'Gib'	: 1.34217728e+8,		// 1 Gibibit in bytes
+	'Tib'	: 1.37438953472e+11,	// 1 Tebibit in bytes
+	'Pib'	: 1.40737488355328e+14,	// 1 Pebibit in bytes
 } as const
 
 
@@ -27,22 +27,32 @@ export const HumanReadableByteInBytes = {
 	'GB'	: 1e+9,		// 1 Gigabyte in bytes
 	'TB'	: 1e+12,	// 1 Terabyte in bytes
 	'PB'	: 1e+15,	// 1 Petabyte in bytes
+	'EB'	: 1e+18,	// 1 Exabyte in bytes
+	'ZB'	: 1e+21,	// 1 Zettabyte in bytes
+	'YB'	: 1e+24,	// 1 Yottabyte in bytes
 } as const
 
 export const ByteInBytes = {
 	...HumanReadableByteInBytes,
 	'KiB'	: 1024,					// 1 Kibibyte in bytes
-	'MiB'	: 1_048_576,			// 1 Mebibyte in bytes
-	'GiB'	: 1_073_741_824,		// 1 Gibibyte in bytes
-	'TiB'	: 1_099_511_627_776,	// 1 Tebibyte in bytes
-	'PiB'	: 1_125_899_906_842_624,// 1 Pebibyte in bytes
+	'MiB'	: 1.048576e+6,			// 1 Mebibyte in bytes
+	'GiB'	: 1.073741824e+9,		// 1 Gibibyte in bytes
+	'TiB'	: 1.099511627776e+12,	// 1 Tebibyte in bytes
+	'PiB'	: 1.125899906842624e+15,// 1 Pebibyte in bytes
+	'EiB'	: 1.152921504606847e+18,// 1 Exbibyte in bytes
+	'ZiB'	: 1.1805916207174113e+21,// 1 Zebibyte in bytes
+	'YiB'	: 1.2089258196146292e+24,// 1 Yobibyte in bytes
 } as const
 
 
-export const InBytes = {
-	...BitInBytes,
-	...ByteInBytes,
-} as const
+export const InBytes = { ...BitInBytes, ...ByteInBytes } as const
+
+
+export type HumanReadableBitInBytes		= typeof HumanReadableBitInBytes[ keyof typeof HumanReadableBitInBytes ]
+export type BitInBytes					= typeof BitInBytes[ keyof typeof BitInBytes ]
+export type HumanReadableByteInBytes	= typeof HumanReadableByteInBytes[ keyof typeof HumanReadableByteInBytes ]
+export type ByteInBytes					= typeof ByteInBytes[ keyof typeof ByteInBytes ]
+export type InBytes						= typeof InBytes[ keyof typeof InBytes ]
 
 
 /**

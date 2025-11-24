@@ -29,6 +29,18 @@ describe( 'formatBytes', () => {
 				input	: 1_000_000_000_000_000,
 				output	: '1 PB',
 			},
+			{
+				input	: 1_000_000_000_000_000_000,
+				output	: '1 EB',
+			},
+			{
+				input	: 1_000_000_000_000_000_000_000,
+				output	: '1 ZB',
+			},
+			{
+				input	: 1_000_000_000_000_000_000_000_000,
+				output	: '1 YB',
+			},
 		]
 
 		tests.map( test => {
