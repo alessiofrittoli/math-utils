@@ -36,42 +36,82 @@
 	],
 	"exports": {
 		".": {
-			"types": "./dist/index.d.ts",
-			"import": "./dist/index.mjs",
-			"require": "./dist/index.js"
+			"import": {
+				"types": "./dist/index.d.mts",
+				"default": "./dist/index.mjs"
+			},
+			"require": {
+				"types": "./dist/index.d.ts",
+				"default": "./dist/index.js"
+			}
 		},
 		"./conversion": {
-			"types": "./dist/conversion/index.d.ts",
-			"import": "./dist/conversion/index.mjs",
-			"require": "./dist/conversion/index.js"
+			"import": {
+				"types": "./dist/conversion/index.d.mts",
+				"default": "./dist/conversion/index.mjs"
+			},
+			"require": {
+				"types": "./dist/conversion/index.d.ts",
+				"default": "./dist/conversion/index.js"
+			}
 		},
 		"./format": {
-			"types": "./dist/format/index.d.ts",
-			"import": "./dist/format/index.mjs",
-			"require": "./dist/format/index.js"
+			"import": {
+				"types": "./dist/format/index.d.mts",
+				"default": "./dist/format/index.mjs"
+			},
+			"require": {
+				"types": "./dist/format/index.d.ts",
+				"default": "./dist/format/index.js"
+			}
 		},
 		"./format/bytes": {
-			"types": "./dist/format/bytes.d.ts",
-			"import": "./dist/format/bytes.mjs",
-			"require": "./dist/format/bytes.js"
+			"import": {
+				"types": "./dist/format/bytes.d.mts",
+				"default": "./dist/format/bytes.mjs"
+			},
+			"require": {
+				"types": "./dist/format/bytes.d.ts",
+				"default": "./dist/format/bytes.js"
+			}
 		},
 		"./helpers": {
-			"types": "./dist/helpers/index.d.ts",
-			"import": "./dist/helpers/index.mjs",
-			"require": "./dist/helpers/index.js"
+			"import": {
+				"types": "./dist/helpers/index.d.mts",
+				"default": "./dist/helpers/index.mjs"
+			},
+			"require": {
+				"types": "./dist/helpers/index.d.ts",
+				"default": "./dist/helpers/index.js"
+			}
 		},
 		"./interpolation": {
-			"types": "./dist/interpolation/index.d.ts",
-			"import": "./dist/interpolation/index.mjs",
-			"require": "./dist/interpolation/index.js"
+			"import": {
+				"types": "./dist/interpolation/index.d.mts",
+				"default": "./dist/interpolation/index.mjs"
+			},
+			"require": {
+				"types": "./dist/interpolation/index.d.ts",
+				"default": "./dist/interpolation/index.js"
+			}
 		},
 		"./random": {
-			"types": "./dist/random/index.d.ts",
-			"import": "./dist/random/index.mjs",
-			"require": "./dist/random/index.js"
+			"import": {
+				"types": "./dist/random/index.d.mts",
+				"default": "./dist/random/index.mjs"
+			},
+			"require": {
+				"types": "./dist/random/index.d.ts",
+				"default": "./dist/random/index.js"
+			}
 		},
 		"./types": {
-			"types": "./dist/types.d.ts"
+			"import": {
+				"types": "./dist/types.d.mts"
+			},
+			"require": {
+				"types": "./dist/types.d.ts"
+			}
 		}
 	},
 	"sideEffects": false,
@@ -79,8 +119,8 @@
 		"//1a": "*********************************************************************",
 		"//1b": "******************** DEV - BUILD - LINT - RELEASE *******************",
 		"//1c": "*********************************************************************",
-		"dev": "NODE_ENV=development tsup --watch",
-		"build:prod": "NODE_ENV=production tsup",
+		"dev": "cross-env NODE_ENV=development tsup --watch",
+		"build:prod": "cross-env NODE_ENV=production tsup",
 		"build": "pnpm lint && pnpm test:ci && pnpm build:prod",
 		"lint": "eslint",
 		"release": "node scripts/release.js --verbose --npm",
@@ -107,22 +147,23 @@
 		"test:random": "pnpm test:watch random.test.ts"
 	},
 	"devDependencies": {
-		"@alessiofrittoli/node-scripts": "^3.1.0",
+		"@alessiofrittoli/node-scripts": "^3.2.0",
 		"@eslint/js": "^9.39.1",
 		"@jest/globals": "^30.2.0",
 		"@types/jest": "^30.0.0",
 		"@types/node": "^24.10.1",
 		"concurrently": "^9.2.1",
+		"cross-env": "^10.1.0",
 		"dotenv": "^17.2.3",
 		"eslint": "^9.39.1",
 		"globals": "^16.5.0",
 		"http-server": "^14.1.1",
 		"jest": "^30.2.0",
-		"ts-jest": "^29.4.5",
+		"ts-jest": "^29.4.6",
 		"ts-node": "^10.9.2",
 		"tsup": "^8.5.1",
 		"typescript": "^5.9.3",
-		"typescript-eslint": "^8.47.0"
+		"typescript-eslint": "^8.48.1"
 	},
 	"dependencies": {
 		"@alessiofrittoli/web-utils": "^1.17.0"
