@@ -275,3 +275,51 @@ console.log(formatBytes(1.25e14, true)); // Outputs '1 Pb'
 ```
 
 </details>
+
+---
+
+#### clamp
+
+Clamp the given `input` with the given `min` and `max` value.
+
+<details>
+
+<summary>Parameters</summary>
+
+| Parameter | Type     | Default | Description                 |
+| --------- | -------- | ------- | --------------------------- |
+| `input`   | `number` | -       | The `input` value to clamp. |
+| `min`     | `number` | `0`     | The minimum value.          |
+| `max`     | `number` | `100`   | The maximum value.          |
+
+</details>
+
+---
+
+<details>
+
+<summary>Returns</summary>
+
+Type: `number`
+
+The clamped value.
+
+</details>
+
+---
+
+<details>
+
+<summary>Usage</summary>
+
+```ts
+import { clamp } from "@alessiofrittoli/math-utils";
+// or
+import { clamp } from "@alessiofrittoli/math-utils/format/bytes";
+
+console.log(clamp(110)); // Outputs: 100
+console.log(clamp(-110)); // Outputs: 0
+console.log(clamp(110, -200, 200)); // Outputs: 110
+```
+
+</details>
