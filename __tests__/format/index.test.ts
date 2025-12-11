@@ -1,4 +1,4 @@
-import { formatNumber } from '@/format'
+import { clamp, formatNumber } from '@/format'
 
 describe( 'formatNumber', () => {
 	
@@ -36,6 +36,26 @@ describe( 'formatNumber', () => {
 	it( 'fallback locales', () => {
 		const result = formatNumber( 123456, undefined, [ 'unknown', 'fr-FR' ] )
 		expect( result ).toBe( '123 456' )
+	} )
+
+} )
+
+
+describe( 'clamp', () => {
+
+	it( 'clamps the given input using default options', () => {
+
+		expect( clamp( 120 ) ).toBe( 100 )
+		expect( clamp( -120 ) ).toBe( 0 )
+
+	} )
+	
+	
+	it( 'clamps the given input using custom options', () => {
+
+		expect( clamp( 120, 20, 50 ) ).toBe( 50 )
+		expect( clamp( 10, 20, 50 ) ).toBe( 20 )
+
 	} )
 
 } )

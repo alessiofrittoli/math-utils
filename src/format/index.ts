@@ -36,3 +36,16 @@ export const formatNumber = (
 	new Intl.NumberFormat( locales, options )
 		.format( number )
 )
+
+
+/**
+ * Clamp the given `input` with the given `min` and `max` value.
+ *
+ * @param	input	The `input` value to clamp.
+ * @param	min		(Optional) The minimum value. Default `0`.
+ * @param	max		(Optional) The maximum value. Default `100`.
+ * @returns	The clamped value.
+ */
+export const clamp = ( input: number, min: number = 0, max: number = 100 ) => (
+	Math.max( min, Math.min( max, input ) )
+)
