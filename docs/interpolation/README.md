@@ -2,65 +2,36 @@
 
 [🔙 Back](../../README.md)
 
-
 ### easeOutCirc
 
 Calculates the easing-out value using a circular easing function, providing a smooth transition with an easing-out effect.
 
-<details>
-
-<summary>Usage</summary>
-
 The `easeOutCirc` function applies a circular easing-out curve to an input value, typically used for animations or transitions to create a smooth deceleration effect.
 
-```ts
-import { easeOutCirc } from '@alessiofrittoli/math-utils'
-// or
-import { easeOutCirc } from '@alessiofrittoli/math-utils/interpolation'
-
-// Apply circular easing-out to a value
-easeOutCirc( 0 )	// Output: 0
-easeOutCirc( 0.5 )	// Output: 0.9682458365518543
-easeOutCirc( 1 )	// Output: 1
-```
-
-</details>
+> [!WARNING]
+> This function has been DEPRECATED in favor of `Easings.easeOutCirc()` function.
 
 <details>
 
 <summary>Parameters</summary>
 
-`x`\
-Type: `number`\
-The input value for the easing function, typically in the range [0, 1].
-
-`x = 0`: The starting point of the easing curve.
-`x = 1`: The end of the easing curve, where the value is 1.
-
-`Returns`\
-Type: `number`\
-The eased value, based on the circular easing-out curve. The output will also be within the range [0, 1].
+| Parameter | Type     | Description                                                             |
+| --------- | -------- | ----------------------------------------------------------------------- |
+| `x`       | `number` | The input value for the easing function, typically in the range [0, 1]. |
+|           |          | - `x = 0`: The starting point of the easing curve.                      |
+|           |          | - `x = 1`: The end of the easing curve, where the value is 1.           |
 
 </details>
 
+---
+
 <details>
 
-<summary>Examples</summary>
+<summary>Returns</summary>
 
-###### Full Range of Input Values
+Type: `number`
 
-```ts
-easeOutCirc( 0 )	// Output: 0
-easeOutCirc( 0.25 )	// Output: 0.8267972847076845
-easeOutCirc( 0.5 )	// Output: 0.9682458365518543
-easeOutCirc( 1 )	// Output: 1
-```
-
-###### Intermediate Values
-
-```ts
-easeOutCirc( 0.75 )	// Output: 0.998044963916957
-```
+The eased value, based on the circular easing-out curve. The output will also be within the range [0, 1].
 
 </details>
 
@@ -77,14 +48,14 @@ Performs linear interpolation between two values, returning a value that is a we
 The `lerp` function is commonly used in animations, simulations, or any scenario where you need to interpolate (or "blend") between two values based on a factor that typically ranges from 0 to 1.
 
 ```ts
-import { lerp } from '@alessiofrittoli/math-utils'
+import { lerp } from "@alessiofrittoli/math-utils";
 // or
-import { lerp } from '@alessiofrittoli/math-utils/interpolation'
+import { lerp } from "@alessiofrittoli/math-utils/interpolation";
 
 // Interpolate between two values
-lerp( 0, 10, 0 )	// Output: 0
-lerp( 0, 10, 0.5 )	// Output: 5
-lerp( 0, 10, 1 )	// Output: 10
+lerp(0, 10, 0); // Output: 0
+lerp(0, 10, 0.5); // Output: 5
+lerp(0, 10, 1); // Output: 10
 ```
 
 </details>
@@ -122,21 +93,21 @@ The interpolated value between `a` and `b`, calculated as `a * (1 - t) + b * t`.
 ###### Interpolation at the Ends
 
 ```ts
-lerp( 0, 10, 0 )	// Output: 0
-lerp( 0, 10, 1 )	// Output: 10
+lerp(0, 10, 0); // Output: 0
+lerp(0, 10, 1); // Output: 10
 ```
 
 ###### Interpolation at the Midpoint
 
 ```ts
-lerp( 0, 10, 0.5 )	// Output: 5
+lerp(0, 10, 0.5); // Output: 5
 ```
 
 ###### Other Values of `t`
 
 ```ts
-lerp( 5, 15, 0.25 )		// Output: 7.5
-lerp( 100, 200, 0.75 )	// Output: 175
+lerp(5, 15, 0.25); // Output: 7.5
+lerp(100, 200, 0.75); // Output: 175
 ```
 
 </details>

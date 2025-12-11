@@ -1,5 +1,6 @@
 import { easeOutCirc, lerp } from '@/interpolation'
 
+
 describe( 'easeOutCirc', () => {
 
 	it( 'handles full range of input values', () => {
