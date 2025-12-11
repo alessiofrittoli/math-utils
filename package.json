@@ -95,6 +95,16 @@
 				"default": "./dist/interpolation/index.js"
 			}
 		},
+		"./easing": {
+			"import": {
+				"types": "./dist/easing/index.d.mts",
+				"default": "./dist/easing/index.mjs"
+			},
+			"require": {
+				"types": "./dist/easing/index.d.ts",
+				"default": "./dist/easing/index.js"
+			}
+		},
 		"./random": {
 			"import": {
 				"types": "./dist/random/index.d.mts",
