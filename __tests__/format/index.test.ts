@@ -57,5 +57,15 @@ describe( 'clamp', () => {
 		expect( clamp( 10, 20, 50 ) ).toBe( 20 )
 
 	} )
+	
+	
+	it( 'handles Infinity values', () => {
+
+		expect( clamp( 120, 0, Infinity ) ).toBe( 120 )
+		expect( clamp( 10, 0, -Infinity ) ).toBe( 0 )
+		expect( clamp( Infinity, 0, Infinity ) ).toBe( Infinity )
+		expect( clamp( -Infinity, 0, Infinity ) ).toBe( 0 )
+
+	} )
 
 } )
