@@ -29,6 +29,7 @@ This lightweight TypeScript utility library comes with common and utility math f
   - [Helpers functions](https://github.com/alessiofrittoli/math-utils/blob/master/docs/helpers/README.md)
   - [Interpolation functions](https://github.com/alessiofrittoli/math-utils/blob/master/docs/interpolation/README.md)
   - [Easing functions](https://github.com/alessiofrittoli/math-utils/blob/master/docs/easing/README.md)
+  - [Tween](https://github.com/alessiofrittoli/math-utils/blob/master/docs/Tween/README.md)
   - [Random number functions](https://github.com/alessiofrittoli/math-utils/blob/master/docs/random/README.md)
   - [Types](https://github.com/alessiofrittoli/math-utils/blob/master/docs/types/README.md)
 - [Development](#development)

@@ -1,4 +1,11 @@
-export type EasingFn = ( t: number ) => number
+/**
+ * Represents a time easing function.
+ * 
+ * @param time The current time.
+ * 
+ * @returns The eased time.
+ */
+export type EasingFn = ( time: number ) => number
 
 export const Easing = {
 	linear: t => t,
