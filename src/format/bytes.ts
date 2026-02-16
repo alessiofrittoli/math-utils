@@ -1,5 +1,5 @@
 import { convertTo } from '@/conversion'
-import { formatNumber } from '.'
+import { formatNumber } from './format'
 
 export const HumanReadableBitInBytes = {
 	'bits'	: 1 / 8,	// 1 bit in bytes (fractional)
