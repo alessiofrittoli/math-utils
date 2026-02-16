@@ -45,82 +45,14 @@
 				"default": "./dist/index.js"
 			}
 		},
-		"./conversion": {
+		"./*": {
 			"import": {
-				"types": "./dist/conversion/index.d.mts",
-				"default": "./dist/conversion/index.mjs"
+				"types": "./dist/*/index.d.mts",
+				"default": "./dist/*/index.mjs"
 			},
 			"require": {
-				"types": "./dist/conversion/index.d.ts",
-				"default": "./dist/conversion/index.js"
-			}
-		},
-		"./format": {
-			"import": {
-				"types": "./dist/format/index.d.mts",
-				"default": "./dist/format/index.mjs"
-			},
-			"require": {
-				"types": "./dist/format/index.d.ts",
-				"default": "./dist/format/index.js"
-			}
-		},
-		"./format/bytes": {
-			"import": {
-				"types": "./dist/format/bytes.d.mts",
-				"default": "./dist/format/bytes.mjs"
-			},
-			"require": {
-				"types": "./dist/format/bytes.d.ts",
-				"default": "./dist/format/bytes.js"
-			}
-		},
-		"./helpers": {
-			"import": {
-				"types": "./dist/helpers/index.d.mts",
-				"default": "./dist/helpers/index.mjs"
-			},
-			"require": {
-				"types": "./dist/helpers/index.d.ts",
-				"default": "./dist/helpers/index.js"
-			}
-		},
-		"./interpolation": {
-			"import": {
-				"types": "./dist/interpolation/index.d.mts",
-				"default": "./dist/interpolation/index.mjs"
-			},
-			"require": {
-				"types": "./dist/interpolation/index.d.ts",
-				"default": "./dist/interpolation/index.js"
-			}
-		},
-		"./easing": {
-			"import": {
-				"types": "./dist/easing/index.d.mts",
-				"default": "./dist/easing/index.mjs"
-			},
-			"require": {
-				"types": "./dist/easing/index.d.ts",
-				"default": "./dist/easing/index.js"
-			}
-		},
-		"./random": {
-			"import": {
-				"types": "./dist/random/index.d.mts",
-				"default": "./dist/random/index.mjs"
-			},
-			"require": {
-				"types": "./dist/random/index.d.ts",
-				"default": "./dist/random/index.js"
-			}
-		},
-		"./types": {
-			"import": {
-				"types": "./dist/types.d.mts"
-			},
-			"require": {
-				"types": "./dist/types.d.ts"
+				"types": "./dist/*/index.d.ts",
+				"default": "./dist/*/index.js"
 			}
 		}
 	},

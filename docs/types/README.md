@@ -19,11 +19,9 @@ These are TypeScript utility types that help with generating ranges of numbers a
 This type is useful when you need to generate an array of numbers from 0 to `N` or manipulate types based on a range of numbers.
 
 ```ts
-import type { IntEnumerate } from '@alessiofrittoli/math-utils'
-// or
-import type { IntEnumerate } from '@alessiofrittoli/math-utils/types'
+import type { IntEnumerate } from "@alessiofrittoli/math-utils";
 
-type Example = IntEnumerate<5>
+type Example = IntEnumerate<5>;
 // Result: 0 | 1 | 2 | 3 | 4
 ```
 
@@ -49,11 +47,9 @@ type Example = IntEnumerate<5>
 The `IntRange` type is useful when you need to work with a range of numbers excluding the end value.
 
 ```ts
-import type { IntRange } from '@alessiofrittoli/math-utils'
-// or
-import type { IntRange } from '@alessiofrittoli/math-utils/types'
+import type { IntRange } from "@alessiofrittoli/math-utils";
 
-type RangeExample = IntRange<2, 5>
+type RangeExample = IntRange<2, 5>;
 // Result: 2 | 3 | 4
 ```
 
@@ -77,10 +73,9 @@ type RangeExample = IntRange<2, 5>
 Represents a 2D vector with `x` and `y` components. The component types are generic and default to number.
 
 ```ts
-interface Vector2<X = number, Y = X>
-{
-	x: X
-	y: Y
+interface Vector2<X = number, Y = X> {
+  x: X;
+  y: Y;
 }
 ```
 
@@ -107,13 +102,11 @@ interface Vector2<X = number, Y = X>
 <summary>Example</summary>
 
 ```ts
-import type { Vector2 } from '@alessiofrittoli/math-utils'
-// or
-import type { Vector2 } from '@alessiofrittoli/math-utils/types'
+import type { Vector2 } from "@alessiofrittoli/math-utils";
 
-const point2D: Vector2 = { x: 10, y: 20 }
-const point2DString: Vector2<string> = { x: '10', y: '20' }
-const mixedPoint2D: Vector2<number, string> = { x: 10, y: '20' }
+const point2D: Vector2 = { x: 10, y: 20 };
+const point2DString: Vector2<string> = { x: "10", y: "20" };
+const mixedPoint2D: Vector2<number, string> = { x: 10, y: "20" };
 ```
 
 </details>
@@ -126,9 +119,8 @@ Represents a 3D vector with `x`, `y`, and `z` components.\
 Extends the `Vector2` interface to include a `z` component. The component types are generic and default to `number`.
 
 ```ts
-interface Vector3<X = number, Y = X, Z = X> extends Vector2<X, Y>
-{
-	z: Z
+interface Vector3<X = number, Y = X, Z = X> extends Vector2<X, Y> {
+  z: Z;
 }
 ```
 
@@ -157,13 +149,15 @@ interface Vector3<X = number, Y = X, Z = X> extends Vector2<X, Y>
 <summary>Example</summary>
 
 ```ts
-import type { Vector3 } from '@alessiofrittoli/math-utils'
-// or
-import type { Vector3 } from '@alessiofrittoli/math-utils/types'
+import type { Vector3 } from "@alessiofrittoli/math-utils";
 
-const point3D: Vector3 = { x: 10, y: 20, z: 30 }
-const point3DString: Vector3<string> = { x: '10', y: '20', z: '30' }
-const mixedPoint3D: Vector3<number, string, boolean> = { x: 10, y: '20', z: true }
+const point3D: Vector3 = { x: 10, y: 20, z: 30 };
+const point3DString: Vector3<string> = { x: "10", y: "20", z: "30" };
+const mixedPoint3D: Vector3<number, string, boolean> = {
+  x: 10,
+  y: "20",
+  z: true,
+};
 ```
 
 </details>
