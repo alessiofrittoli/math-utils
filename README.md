@@ -20,8 +20,6 @@
 
 This lightweight TypeScript utility library comes with common and utility math functions.
 
-Everything is exported from the root of this library but specific paths can be used too (especially when dynamically importing functions and tree shaking has no effect).
-
 ### Table of Contents
 
 - [Getting started](#getting-started)

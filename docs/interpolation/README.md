@@ -49,8 +49,6 @@ The `lerp` function is commonly used in animations, simulations, or any scenario
 
 ```ts
 import { lerp } from "@alessiofrittoli/math-utils";
-// or
-import { lerp } from "@alessiofrittoli/math-utils/interpolation";
 
 // Interpolate between two values
 lerp(0, 10, 0); // Output: 0

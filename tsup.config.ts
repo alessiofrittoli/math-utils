@@ -6,7 +6,7 @@ export default defineConfig( {
 	entry		: [ 'src/**/index.ts' ],
 	format		: [ 'cjs', 'esm' ],
 	dts			: true,
-	splitting	: false,
+	splitting	: true,
 	shims		: true,
 	skipNodeModulesBundle: true,
 	clean		: true,
