@@ -2,8 +2,7 @@
 
 [🔙 Back](../../README.md)
 
-
-### mtRand
+### `mtRand`
 
 Generates a random number between the given range, mimicking the behavior of PHP's [mt_rand](https://www.php.net/manual/it/function.mt-rand.php) function.
 
@@ -15,15 +14,13 @@ The `mtRand` function returns a random integer between a specified min and max v
 If no arguments are provided, the function defaults to a range of `0` to `0x7FFFFFFF`.
 
 ```ts
-import { mtRand } from '@alessiofrittoli/math-utils'
-// or
-import { mtRand } from '@alessiofrittoli/math-utils/random'
+import { mtRand } from "@alessiofrittoli/math-utils";
 
 // Generate a random number between 0 and 10
-mtRand( 0, 10 )	// Output: Random number between 0 and 10
+mtRand(0, 10); // Output: Random number between 0 and 10
 
 // Generate a random number between 100 and 200
-mtRand( 100, 200 )	// Output: Random number between 100 and 200
+mtRand(100, 200); // Output: Random number between 100 and 200
 ```
 
 </details>
@@ -53,22 +50,22 @@ A random integer between min and max, inclusive.
 ###### Generating a Random Number in a Range
 
 ```ts
-mtRand( 0, 10 )		// Output: Random number between 0 and 10
-mtRand( 1, 5 )		// Output: Random number between 1 and 5
-mtRand( 100, 200 )	// Output: Random number between 100 and 200
+mtRand(0, 10); // Output: Random number between 0 and 10
+mtRand(1, 5); // Output: Random number between 1 and 5
+mtRand(100, 200); // Output: Random number between 100 and 200
 ```
 
 ###### Using Default Values
 
 ```ts
-mtRand()	// Output: Random number between 0 and 0x7FFFFFFF
+mtRand(); // Output: Random number between 0 and 0x7FFFFFFF
 ```
 
 </details>
 
 ---
 
-### randomNumUUID
+### `randomNumUUID`
 
 Generates a random numeric UUID (Universally Unique Identifier). This function is useful when [crypto.randomUUID()](https://developer.mozilla.org/en-US/docs/Web/API/Crypto/randomUUID) is not available or when you need a numeric-based UUID.
 
@@ -81,19 +78,17 @@ The `randomNumUUID` function returns a string representing a random UUID.
 The usage is discouraged since this function has been designed to be executed as fallback of [crypto.randomUUID()](https://developer.mozilla.org/en-US/docs/Web/API/Crypto/randomUUID). Use [randomUUID](#randomuuid) instead.
 
 ```ts
-import { randomNumUUID } from '@alessiofrittoli/math-utils'
-// or
-import { randomNumUUID } from '@alessiofrittoli/math-utils/random'
+import { randomNumUUID } from "@alessiofrittoli/math-utils";
 
 // Generate a random numeric UUID
-randomNumUUID() // Output: A random UUID like '2781415097-23468-18589-36554-89625858919940'
+randomNumUUID(); // Output: A random UUID like '2781415097-23468-18589-36554-89625858919940'
 ```
 
 </details>
 
 ---
 
-### generateUUID
+### `generateUUID`
 
 Generates a random numeric v4 UUID (Universally Unique Identifier). This function is useful when [crypto.randomUUID()](https://developer.mozilla.org/en-US/docs/Web/API/Crypto/randomUUID) is not available.
 
@@ -106,19 +101,17 @@ The `generateUUID` function returns a string representing a random UUID in the f
 The usage is discouraged since this function has been designed to be executed as fallback of [crypto.randomUUID()](https://developer.mozilla.org/en-US/docs/Web/API/Crypto/randomUUID). Use [randomUUID](#randomuuid) instead.
 
 ```ts
-import { generateUUID } from '@alessiofrittoli/math-utils'
-// or
-import { generateUUID } from '@alessiofrittoli/math-utils/random'
+import { generateUUID } from "@alessiofrittoli/math-utils";
 
 // Generate a random numeric UUID
-generateUUID() // Output: A random UUID like '4e4d7a60-7b6b-4c79-8142-fc21ac3492f8'
+generateUUID(); // Output: A random UUID like '4e4d7a60-7b6b-4c79-8142-fc21ac3492f8'
 ```
 
 </details>
 
 ---
 
-### randomUUID
+### `randomUUID`
 
 Generates a random UUID. It uses the native [crypto.randomUUID()](https://developer.mozilla.org/en-US/docs/Web/API/Crypto/randomUUID) function when available.\
 If [crypto.randomUUID()](https://developer.mozilla.org/en-US/docs/Web/API/Crypto/randomUUID) is not available, it falls back to using the [randomNumUUID](#randomnumuuid) function.
@@ -130,12 +123,10 @@ If [crypto.randomUUID()](https://developer.mozilla.org/en-US/docs/Web/API/Crypto
 The `randomUUID` function returns a random UUID, using the [crypto.randomUUID()](https://developer.mozilla.org/en-US/docs/Web/API/Crypto/randomUUID) method if available, or falling back to [randomNumUUID](#randomnumuuid) function.
 
 ```ts
-import { randomUUID } from '@alessiofrittoli/math-utils'
-// or
-import { randomUUID } from '@alessiofrittoli/math-utils/random'
+import { randomUUID } from "@alessiofrittoli/math-utils";
 
 // Generate a random numeric UUID
-randomUUID() // Output: A random UUID like 'f6c5f5ff-b3ac-47fa-bd55-510079b16c9d'
+randomUUID(); // Output: A random UUID like 'f6c5f5ff-b3ac-47fa-bd55-510079b16c9d'
 ```
 
 </details>

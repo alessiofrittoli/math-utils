@@ -1,6 +1,13 @@
-export type EasingFn = ( t: number ) => number
+/**
+ * Represents a time easing function.
+ * 
+ * @param time The current time.
+ * 
+ * @returns The eased time.
+ */
+export type EasingFn = ( time: number ) => number
 
-export const Easing = {
+export const easing = {
 	linear: t => t,
 	
 	// --- Quadratic ---
@@ -120,11 +127,11 @@ export const Easing = {
 		return n1 * ( t -= 2.625 / d1 ) * t + 0.984375
 	},
 	easeInBounce: ( t ): number => (
-		1 - Easing.easeOutBounce( 1 - t )
+		1 - easing.easeOutBounce( 1 - t )
 	),
 	easeInOutBounce: ( t ): number => (
 		t < 0.5
-			? ( 1 - Easing.easeOutBounce( 1 - 2 * t ) ) / 2
-			: ( 1 + Easing.easeOutBounce( 2 * t - 1 ) ) / 2
+			? ( 1 - easing.easeOutBounce( 1 - 2 * t ) ) / 2
+			: ( 1 + easing.easeOutBounce( 2 * t - 1 ) ) / 2
 	),
 } as const satisfies Record<string, EasingFn>

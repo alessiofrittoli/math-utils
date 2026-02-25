@@ -20,17 +20,17 @@
 
 This lightweight TypeScript utility library comes with common and utility math functions.
 
-Everything is exported from the root of this library but specific paths can be used too (especially when dynamically importing functions and tree shaking has no effect).
-
 ### Table of Contents
 
 - [Getting started](#getting-started)
+- [What's Changed](#whats-changed)
 - What's inside
   - [Conversion functions](https://github.com/alessiofrittoli/math-utils/blob/master/docs/conversion/README.md)
   - [Formatting functions](https://github.com/alessiofrittoli/math-utils/blob/master/docs/format/README.md)
   - [Helpers functions](https://github.com/alessiofrittoli/math-utils/blob/master/docs/helpers/README.md)
   - [Interpolation functions](https://github.com/alessiofrittoli/math-utils/blob/master/docs/interpolation/README.md)
   - [Easing functions](https://github.com/alessiofrittoli/math-utils/blob/master/docs/easing/README.md)
+  - [Tween](https://github.com/alessiofrittoli/math-utils/blob/master/docs/Tween/README.md)
   - [Random number functions](https://github.com/alessiofrittoli/math-utils/blob/master/docs/random/README.md)
   - [Types](https://github.com/alessiofrittoli/math-utils/blob/master/docs/types/README.md)
 - [Development](#development)
@@ -57,6 +57,16 @@ or using `pnpm`
 ```bash
 pnpm i @alessiofrittoli/math-utils
 ```
+
+---
+
+### What's Changed
+
+#### Updates in the latest release 🎉
+
+- Welcome [`Tween`](https://github.com/alessiofrittoli/math-utils/blob/master/docs/Tween/README.md)!
+- Removed deprecated `easeOutCirc` in favor of `Easings.easeOutCirc()` function.
+  See [Easing API Reference](https://github.com/alessiofrittoli/math-utils/blob/master/docs/easing/README.md) for more info.
 
 ---
 

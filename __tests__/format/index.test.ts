@@ -1,4 +1,4 @@
-import { clamp, formatNumber } from '@/format'
+import { clamp, formatNumber } from '@/format/format'
 
 describe( 'formatNumber', () => {
 	

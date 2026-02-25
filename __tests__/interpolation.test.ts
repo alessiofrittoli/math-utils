@@ -1,21 +1,4 @@
-import { easeOutCirc, lerp } from '@/interpolation'
-
-
-describe( 'easeOutCirc', () => {
-
-	it( 'handles full range of input values', () => {
-		expect( easeOutCirc( 0 ) ).toBe( 0 )
-		expect( easeOutCirc( 0.25 ) ).toBe( 0.8267972847076845 )
-		expect( easeOutCirc( 0.5 ) ).toBe( 0.9682458365518543 )
-		expect( easeOutCirc( 1 ) ).toBe( 1 )
-	} )
-
-	it( 'handles intermediate values', () => {
-		expect( easeOutCirc( 0.75 ) ).toBe( 0.998044963916957 )
-	} )
-
-} )
-
+import { lerp } from '@/interpolation'
 
 describe( 'lerp', () => {
 

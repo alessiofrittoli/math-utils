@@ -16,8 +16,6 @@ Import the function as follow:
 
 ```ts
 import { formatNumber } from "@alessiofrittoli/math-utils";
-// or
-import { formatNumber } from "@alessiofrittoli/math-utils/format";
 ```
 
 </details>
@@ -68,7 +66,7 @@ formatNumber(
     minimumFractionDigits: 2,
     maximumFractionDigits: 2,
   },
-  "en-US"
+  "en-US",
 );
 // Output: "1,234.57"
 ```
@@ -82,7 +80,7 @@ formatNumber(
     style: "currency",
     currency: "EUR",
   },
-  "de-DE"
+  "de-DE",
 );
 // Output: "1.000,00 €"
 ```
@@ -96,7 +94,7 @@ formatNumber(
     style: "percent",
     minimumFractionDigits: 1,
   },
-  "en-US"
+  "en-US",
 );
 // Output: "75.0%"
 ```
@@ -256,8 +254,6 @@ A string representing the formatted size.
 
 ```ts
 import { formatBytes } from "@alessiofrittoli/math-utils";
-// or
-import { formatBytes } from "@alessiofrittoli/math-utils/format/bytes";
 
 console.log(formatBytes(999)); // Outputs: '999 bytes'
 console.log(formatBytes(1024)); // Outputs: '1.024 KB'
@@ -314,8 +310,6 @@ The clamped value.
 
 ```ts
 import { clamp } from "@alessiofrittoli/math-utils";
-// or
-import { clamp } from "@alessiofrittoli/math-utils/format/bytes";
 
 console.log(clamp(110)); // Outputs: 100
 console.log(clamp(-110)); // Outputs: 0

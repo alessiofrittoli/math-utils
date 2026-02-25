@@ -2,42 +2,7 @@
 
 [🔙 Back](../../README.md)
 
-### easeOutCirc
-
-Calculates the easing-out value using a circular easing function, providing a smooth transition with an easing-out effect.
-
-The `easeOutCirc` function applies a circular easing-out curve to an input value, typically used for animations or transitions to create a smooth deceleration effect.
-
-> [!WARNING]
-> This function has been DEPRECATED in favor of `Easings.easeOutCirc()` function.
-
-<details>
-
-<summary>Parameters</summary>
-
-| Parameter | Type     | Description                                                             |
-| --------- | -------- | ----------------------------------------------------------------------- |
-| `x`       | `number` | The input value for the easing function, typically in the range [0, 1]. |
-|           |          | - `x = 0`: The starting point of the easing curve.                      |
-|           |          | - `x = 1`: The end of the easing curve, where the value is 1.           |
-
-</details>
-
----
-
-<details>
-
-<summary>Returns</summary>
-
-Type: `number`
-
-The eased value, based on the circular easing-out curve. The output will also be within the range [0, 1].
-
-</details>
-
----
-
-### lerp
+### `lerp`
 
 Performs linear interpolation between two values, returning a value that is a weighted average of the two, based on a given interpolation factor.
 
@@ -49,8 +14,6 @@ The `lerp` function is commonly used in animations, simulations, or any scenario
 
 ```ts
 import { lerp } from "@alessiofrittoli/math-utils";
-// or
-import { lerp } from "@alessiofrittoli/math-utils/interpolation";
 
 // Interpolate between two values
 lerp(0, 10, 0); // Output: 0

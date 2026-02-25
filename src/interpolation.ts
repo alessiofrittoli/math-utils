@@ -1,17 +1,4 @@
 /**
- * Calculates the easing out value using a circular easing function.
- * 
- * @deprecated Use {@link Easing.easeOutCirc} instead.
- * 
- * @param	x The input value, typically in the range [0, 1].
- * @returns	The eased value, based on a circular easing-out curve.
- */
-export const easeOutCirc = ( x: number ) => (
-	Math.sqrt( 1 - Math.pow( x - 1, 4 ) )
-)
-
-
-/**
  * Linearly interpolates between two values.
  *
  * @param a The starting value.
