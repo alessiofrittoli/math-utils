@@ -8,7 +8,7 @@ Supports customizable easing functions and configurable tick strategies (GPU-syn
 
 ### Types
 
-#### TickHandler
+#### `TickHandler`
 
 Callback executed on each interpolation tick.
 
@@ -24,7 +24,7 @@ Callback executed on each interpolation tick.
 
 ---
 
-#### TweenOptions
+#### `TweenOptions`
 
 Defines customization options required by `Tween.to()` method.
 
@@ -32,16 +32,16 @@ Defines customization options required by `Tween.to()` method.
 
 <summary style="cursor:pointer">Properties</summary>
 
-| Property   | Type          | Description                                                                                                                     |
-| ---------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------- |
-| `from`     | `number`      | Initial value of the interpolation.                                                                                             |
-| `duration` | `number`      | Duration of the tween in milliseconds.                                                                                          |
-| `onTick`   | `TickHandler` | Callback executed on each interpolation tick.                                                                                   |
-|            |               | See [`TickHandler`](#tickhandler) types for more info.                                                                          |
-| `easing`   | `EasingFn`    | (Optional) Easing function used to transform the linear time progression.                                                       |
-|            |               | See [`EasingFn`](https://github.com/alessiofrittoli/math-utils/blob/master/docs/easing/README.md#easingfn) types for more info. |
-| `onEnd`    | `TickHandler` | Callback executed when the interpolation completes.                                                                             |
-|            |               | See [`TickHandler`](#tickhandler) types for more info.                                                                          |
+| Property   | Type          | Default         | Description                                                                                                                     |
+| ---------- | ------------- | --------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| `from`     | `number`      | -               | Initial value of the interpolation.                                                                                             |
+| `duration` | `number`      | `200`           | (Optional) Duration of the tween in milliseconds.                                                                               |
+| `onTick`   | `TickHandler` | -               | Callback executed on each interpolation tick.                                                                                   |
+|            |               | -               | See [`TickHandler`](#tickhandler) types for more info.                                                                          |
+| `onEnd`    | `TickHandler` | -               | (Optional) Callback executed when the interpolation completes.                                                                  |
+|            |               | -               | See [`TickHandler`](#tickhandler) types for more info.                                                                          |
+| `easing`   | `EasingFn`    | `Easing.linear` | (Optional) Easing function used to transform the linear time progression.                                                       |
+|            |               | -               | See [`EasingFn`](https://github.com/alessiofrittoli/math-utils/blob/master/docs/easing/README.md#easingfn) types for more info. |
 
 </details>
 
