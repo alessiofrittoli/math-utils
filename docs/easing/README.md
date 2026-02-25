@@ -6,6 +6,12 @@
 
 The `Easing` object defines and exports the most commonly used easing functions that allows you to remaps the timeline of the given time.
 
+```ts
+import { easing } from "@alessiofrittoli/math-utils";
+
+easing.linear(20);
+```
+
 #### EasingFn
 
 Represents a time easing function.
