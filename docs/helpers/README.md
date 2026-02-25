@@ -37,17 +37,11 @@ The rounded numeric value.
 
 <summary style="cursor:pointer">Examples</summary>
 
-###### Importing the function
-
-```ts
-import { round } from "@alessiofrittoli/math-utils";
-```
-
----
-
 ###### Round to No Decimal Places (Default)
 
 ```ts
+import { round } from "@alessiofrittoli/math-utils";
+
 round(4.2);
 // Output: 4
 round(4.56);
@@ -59,6 +53,8 @@ round(4.56);
 ###### Round to Specific Decimal Places
 
 ```ts
+import { round } from "@alessiofrittoli/math-utils";
+
 round(4.19789, 2);
 // Output: 4.20
 ```
@@ -68,6 +64,8 @@ round(4.19789, 2);
 ###### Round Negative Numbers
 
 ```ts
+import { round } from "@alessiofrittoli/math-utils";
+
 round(-3.14159, 3);
 // Output: -3.142
 ```
@@ -77,6 +75,8 @@ round(-3.14159, 3);
 ###### Round Large Numbers
 
 ```ts
+import { round } from "@alessiofrittoli/math-utils";
+
 round(123456.789, 1);
 // Output: 123456.8
 ```
@@ -138,17 +138,11 @@ However, it expects both haystack and needle to be valid numeric types.
 
 <summary style="cursor:pointer">Examples</summary>
 
-###### Importing the function
-
-```ts
-import { getClosestNumber } from "@alessiofrittoli/math-utils";
-```
-
----
-
 ###### Basic Usage
 
 ```ts
+import { getClosestNumber } from "@alessiofrittoli/math-utils";
+
 getClosestNumber([1, 5, 10, 20], 7);
 // Output: 5
 ```
@@ -158,6 +152,8 @@ getClosestNumber([1, 5, 10, 20], 7);
 ###### Exact Match
 
 ```ts
+import { getClosestNumber } from "@alessiofrittoli/math-utils";
+
 getClosestNumber([3, 7, 15], 7);
 // Output: 7
 ```
@@ -167,6 +163,8 @@ getClosestNumber([3, 7, 15], 7);
 ###### Empty Array
 
 ```ts
+import { getClosestNumber } from "@alessiofrittoli/math-utils";
+
 getClosestNumber([], 10);
 // Output: 0
 ```
@@ -176,6 +174,8 @@ getClosestNumber([], 10);
 ###### Negative Numbers
 
 ```ts
+import { getClosestNumber } from "@alessiofrittoli/math-utils";
+
 getClosestNumber([-10, -5, 0, 5], -7);
 // Output: -5
 ```
@@ -187,6 +187,8 @@ getClosestNumber([-10, -5, 0, 5], -7);
 When the target number (`needle`) is equidistant from multiple numbers in the array (`haystack`), the "true" closest number could philosophically be considered _both_ or an _indeterminate state_. However, for practical and technical reasons, this function will return the first closest number found in the array.
 
 ```ts
+import { getClosestNumber } from "@alessiofrittoli/math-utils";
+
 getClosestNumber([-1, 1], 0);
 // Output: -1
 // Explanation: Both -1 and 1 are equidistant from 0, but -1 is returned because it appears first in the array.
@@ -240,17 +242,11 @@ A tuple containing:
 
 <summary style="cursor:pointer">Examples</summary>
 
-###### Importing the function
-
-```ts
-import { getNumbersFromString } from "@alessiofrittoli/math-utils";
-```
-
----
-
 ###### Basic Extraction
 
 ```ts
+import { getNumbersFromString } from "@alessiofrittoli/math-utils";
+
 getNumbersFromString("abc123xyz456");
 // Output: [ 123456, [ 123, 456 ] ]
 ```
@@ -260,6 +256,8 @@ getNumbersFromString("abc123xyz456");
 ###### No Digits in String
 
 ```ts
+import { getNumbersFromString } from "@alessiofrittoli/math-utils";
+
 getNumbersFromString("Hello World!");
 // Output: [ null, null ]
 ```
@@ -269,6 +267,8 @@ getNumbersFromString("Hello World!");
 ###### Single Number in String
 
 ```ts
+import { getNumbersFromString } from "@alessiofrittoli/math-utils";
+
 getNumbersFromString("Price: 99€");
 // Output: [ 99, [ 99 ] ]
 ```
@@ -278,6 +278,8 @@ getNumbersFromString("Price: 99€");
 ###### Empty String
 
 ```ts
+import { getNumbersFromString } from "@alessiofrittoli/math-utils";
+
 getNumbersFromString("");
 // Output: [ null, null ]
 ```
@@ -287,6 +289,8 @@ getNumbersFromString("");
 ###### Complex String with Symbols
 
 ```ts
+import { getNumbersFromString } from "@alessiofrittoli/math-utils";
+
 getNumbersFromString("Order #123-456. Delivery in 7 days.");
 // Output: [ 1234567, [ 123, 456, 7 ] ]
 ```
@@ -332,17 +336,11 @@ The English ordinal suffix for the given number ('st', 'nd', 'rd', or 'th').
 
 <summary style="cursor:pointer">Examples</summary>
 
-###### Importing the function
-
-```ts
-import { englishOrdinalSuffix } from "@alessiofrittoli/math-utils";
-```
-
----
-
 ###### Basic Usage
 
 ```ts
+import { englishOrdinalSuffix } from "@alessiofrittoli/math-utils";
+
 englishOrdinalSuffix(1); // Output: 'st'
 englishOrdinalSuffix(2); // Output: 'nd'
 englishOrdinalSuffix(3); // Output: 'rd'
@@ -358,6 +356,8 @@ englishOrdinalSuffix(44); // Output: 'th'
 ###### Special Cases
 
 ```ts
+import { englishOrdinalSuffix } from "@alessiofrittoli/math-utils";
+
 englishOrdinalSuffix(11); // Output: 'th'
 englishOrdinalSuffix(12); // Output: 'th'
 englishOrdinalSuffix(13); // Output: 'th'
@@ -368,6 +368,8 @@ englishOrdinalSuffix(13); // Output: 'th'
 ###### Larger Numbers
 
 ```ts
+import { englishOrdinalSuffix } from "@alessiofrittoli/math-utils";
+
 englishOrdinalSuffix(101); // Output: 'st'
 englishOrdinalSuffix(112); // Output: 'th'
 englishOrdinalSuffix(122); // Output: 'nd'
@@ -413,17 +415,11 @@ The padded string if value is shorter than `maxLength`; otherwise, the original 
 
 <summary style="cursor:pointer">Examples</summary>
 
-###### Importing the function
-
-```ts
-import { padStart } from "@alessiofrittoli/math-utils";
-```
-
----
-
 ###### Padding a Short Number
 
 ```ts
+import { padStart } from "@alessiofrittoli/math-utils";
+
 console.log(padStart(5, 3));
 // Outputs: "005"
 ```
@@ -433,6 +429,8 @@ console.log(padStart(5, 3));
 ###### No Padding Needed
 
 ```ts
+import { padStart } from "@alessiofrittoli/math-utils";
+
 console.log(padStart(123, 3));
 // Outputs: "123"
 ```
@@ -442,6 +440,8 @@ console.log(padStart(123, 3));
 ###### Larger Numbers
 
 ```ts
+import { padStart } from "@alessiofrittoli/math-utils";
+
 console.log(padStart(123456, 5));
 // Outputs: "123456"
 ```
@@ -451,6 +451,8 @@ console.log(padStart(123456, 5));
 ###### Using custom character
 
 ```ts
+import { padStart } from "@alessiofrittoli/math-utils";
+
 console.log(padStart(7, 3, "+"));
 // Outputs: "++7"
 ```
@@ -492,17 +494,11 @@ Type: `boolean`
 
 <summary style="cursor:pointer">Examples</summary>
 
-###### Importing the function
-
-```ts
-import { isNumeric } from "@alessiofrittoli/math-utils";
-```
-
----
-
 ###### Checking strings
 
 ```ts
+import { isNumeric } from "@alessiofrittoli/math-utils";
+
 console.log(isNumeric("12345"));
 // Outputs: `true`
 
@@ -515,6 +511,8 @@ console.log(isNumeric("invalid numeric string 12345"));
 ###### Checking numbers
 
 ```ts
+import { isNumeric } from "@alessiofrittoli/math-utils";
+
 console.log(isNumeric(12345));
 // Outputs: `true`
 
@@ -568,17 +566,11 @@ An object containing pagination informations based on the given options with the
 
 <summary style="cursor:pointer">Examples</summary>
 
-###### Importing the function
-
-```ts
-import { paginate } from "@alessiofrittoli/math-utils";
-```
-
----
-
 ###### Get pagination informations
 
 ```ts
+import { paginate } from "@alessiofrittoli/math-utils";
+
 console.log(paginate({ perPage: 12, total: 30 }));
 // Outputs: { pages: 3, currentPage: 1, previousPage: false, nextPage: 2 }
 ```
@@ -588,6 +580,8 @@ console.log(paginate({ perPage: 12, total: 30 }));
 ###### Get pagination informations with offset
 
 ```ts
+import { paginate } from "@alessiofrittoli/math-utils";
+
 console.log(paginate({ perPage: 12, offset: 12, total: 30 }));
 // Outputs: { pages: 3, currentPage: 2, previousPage: 1, nextPage: 3 }
 ```
