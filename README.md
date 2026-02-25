@@ -64,6 +64,7 @@ pnpm i @alessiofrittoli/math-utils
 
 #### Updates in the latest release 🎉
 
+- Welcome [`Tween`](https://github.com/alessiofrittoli/math-utils/blob/master/docs/Tween/README.md)!
 - Removed deprecated `easeOutCirc` in favor of `Easings.easeOutCirc()` function.
   See [Easing API Reference](https://github.com/alessiofrittoli/math-utils/blob/master/docs/easing/README.md) for more info.
 
