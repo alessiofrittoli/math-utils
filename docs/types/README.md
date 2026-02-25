@@ -27,6 +27,8 @@ type Example = IntEnumerate<5>;
 
 </details>
 
+---
+
 <details>
 
 <summary>Type Parameters</summary>
@@ -35,6 +37,8 @@ type Example = IntEnumerate<5>;
 - `Acc` (optional): Accumulator array to collect the results of the enumeration (default is an empty array).
 
 </details>
+
+---
 
 #### IntRange
 
@@ -55,6 +59,8 @@ type RangeExample = IntRange<2, 5>;
 
 </details>
 
+---
+
 <details>
 
 <summary>Type Parameters</summary>
@@ -68,7 +74,7 @@ type RangeExample = IntRange<2, 5>;
 
 ### Vector Interfaces
 
-#### Vector2
+#### `Vector2`
 
 Represents a 2D vector with `x` and `y` components. The component types are generic and default to number.
 
@@ -88,6 +94,8 @@ interface Vector2<X = number, Y = X> {
 
 </details>
 
+---
+
 <details>
 
 <summary>Properties</summary>
@@ -96,6 +104,8 @@ interface Vector2<X = number, Y = X> {
 - `y`: The value of the `y` component.
 
 </details>
+
+---
 
 <details>
 
@@ -113,7 +123,7 @@ const mixedPoint2D: Vector2<number, string> = { x: 10, y: "20" };
 
 ---
 
-#### Vector3
+#### `Vector3`
 
 Represents a 3D vector with `x`, `y`, and `z` components.\
 Extends the `Vector2` interface to include a `z` component. The component types are generic and default to `number`.
@@ -134,6 +144,8 @@ interface Vector3<X = number, Y = X, Z = X> extends Vector2<X, Y> {
 
 </details>
 
+---
+
 <details>
 
 <summary>Properties</summary>
@@ -143,6 +155,8 @@ interface Vector3<X = number, Y = X, Z = X> extends Vector2<X, Y> {
 - `z`: The value of the `z` component.
 
 </details>
+
+---
 
 <details>
 

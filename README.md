@@ -6,8 +6,8 @@
 
 [version-badge]: https://img.shields.io/npm/v/%40alessiofrittoli%2Fmath-utils
 [npm-url]: https://npmjs.org/package/%40alessiofrittoli%2Fmath-utils
-[coverage-badge]: https://coveralls.io/repos/github/alessiofrittoli/math-utils/badge.svg
-[coverage-url]: https://coveralls.io/github/alessiofrittoli/math-utils
+[coverage-badge]: https://coveralls.io/repos/github/alessiofrittoli/math-utils/badge.svg?branch=releases/alpha
+[coverage-url]: https://coveralls.io/github/alessiofrittoli/math-utils?branch=releases/alpha
 [socket-badge]: https://socket.dev/api/badge/npm/package/@alessiofrittoli/math-utils
 [socket-url]: https://socket.dev/npm/package/@alessiofrittoli/math-utils/overview
 [downloads-badge]: https://img.shields.io/npm/dm/%40alessiofrittoli%2Fmath-utils.svg
@@ -62,8 +62,9 @@ pnpm i @alessiofrittoli/math-utils
 
 ### What's Changed
 
-#### Updates in the latest release
+#### Updates in the latest release 🎉
 
+- Welcome [`Tween`](https://github.com/alessiofrittoli/math-utils/blob/master/docs/Tween/README.md)!
 - Removed deprecated `easeOutCirc` in favor of `Easings.easeOutCirc()` function.
   See [Easing API Reference](https://github.com/alessiofrittoli/math-utils/blob/master/docs/easing/README.md) for more info.
 

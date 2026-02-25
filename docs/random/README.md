@@ -2,7 +2,7 @@
 
 [🔙 Back](../../README.md)
 
-### mtRand
+### `mtRand`
 
 Generates a random number between the given range, mimicking the behavior of PHP's [mt_rand](https://www.php.net/manual/it/function.mt-rand.php) function.
 
@@ -65,7 +65,7 @@ mtRand(); // Output: Random number between 0 and 0x7FFFFFFF
 
 ---
 
-### randomNumUUID
+### `randomNumUUID`
 
 Generates a random numeric UUID (Universally Unique Identifier). This function is useful when [crypto.randomUUID()](https://developer.mozilla.org/en-US/docs/Web/API/Crypto/randomUUID) is not available or when you need a numeric-based UUID.
 
@@ -88,7 +88,7 @@ randomNumUUID(); // Output: A random UUID like '2781415097-23468-18589-36554-896
 
 ---
 
-### generateUUID
+### `generateUUID`
 
 Generates a random numeric v4 UUID (Universally Unique Identifier). This function is useful when [crypto.randomUUID()](https://developer.mozilla.org/en-US/docs/Web/API/Crypto/randomUUID) is not available.
 
@@ -111,7 +111,7 @@ generateUUID(); // Output: A random UUID like '4e4d7a60-7b6b-4c79-8142-fc21ac349
 
 ---
 
-### randomUUID
+### `randomUUID`
 
 Generates a random UUID. It uses the native [crypto.randomUUID()](https://developer.mozilla.org/en-US/docs/Web/API/Crypto/randomUUID) function when available.\
 If [crypto.randomUUID()](https://developer.mozilla.org/en-US/docs/Web/API/Crypto/randomUUID) is not available, it falls back to using the [randomNumUUID](#randomnumuuid) function.
