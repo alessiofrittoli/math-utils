@@ -23,6 +23,7 @@ This lightweight TypeScript utility library comes with common and utility math f
 ### Table of Contents
 
 - [Getting started](#getting-started)
+- [What's Changed](#whats-changed)
 - What's inside
   - [Conversion functions](https://github.com/alessiofrittoli/math-utils/blob/master/docs/conversion/README.md)
   - [Formatting functions](https://github.com/alessiofrittoli/math-utils/blob/master/docs/format/README.md)
@@ -56,6 +57,15 @@ or using `pnpm`
 ```bash
 pnpm i @alessiofrittoli/math-utils
 ```
+
+---
+
+### What's Changed
+
+#### Updates in the latest release
+
+- Removed deprecated `easeOutCirc` in favor of `Easings.easeOutCirc()` function.
+  See [Easing API Reference](https://github.com/alessiofrittoli/math-utils/blob/master/docs/easing/README.md) for more info.
 
 ---
 

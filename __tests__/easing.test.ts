@@ -1,188 +1,188 @@
-import { Easing } from '@/easing'
+import { easing } from '@/easing'
 
 describe( 'Easing', () => {
 
 	it( 'linear', () => {
-		expect( Easing.linear( 0 ) ).toBeCloseTo( 0 )
-		expect( Easing.linear( 0.5 ) ).toBeCloseTo( 0.5 )
-		expect( Easing.linear( 1 ) ).toBeCloseTo( 1 )
+		expect( easing.linear( 0 ) ).toBeCloseTo( 0 )
+		expect( easing.linear( 0.5 ) ).toBeCloseTo( 0.5 )
+		expect( easing.linear( 1 ) ).toBeCloseTo( 1 )
 	} )
 
 	it( 'easeInQuad', () => {
-		expect( Easing.easeInQuad( 0 ) ).toBeCloseTo( 0 )
-		expect( Easing.easeInQuad( 0.5 )).toBeCloseTo( 0.25 )
-		expect( Easing.easeInQuad( 1 ) ).toBeCloseTo( 1 )
+		expect( easing.easeInQuad( 0 ) ).toBeCloseTo( 0 )
+		expect( easing.easeInQuad( 0.5 )).toBeCloseTo( 0.25 )
+		expect( easing.easeInQuad( 1 ) ).toBeCloseTo( 1 )
 	} )
 
 	it( 'easeOutQuad', () => {
-		expect( Easing.easeOutQuad( 0 ) ).toBeCloseTo( 0 )
-		expect( Easing.easeOutQuad( 0.5 ) ).toBeCloseTo( 0.75 )
-		expect( Easing.easeOutQuad( 1 ) ).toBeCloseTo( 1 )
+		expect( easing.easeOutQuad( 0 ) ).toBeCloseTo( 0 )
+		expect( easing.easeOutQuad( 0.5 ) ).toBeCloseTo( 0.75 )
+		expect( easing.easeOutQuad( 1 ) ).toBeCloseTo( 1 )
 	} )
 
 	it('easeInOutQuad', () => {
-		expect( Easing.easeInOutQuad( 0 ) ).toBeCloseTo( 0 )
-		expect( Easing.easeInOutQuad( 0.25 ) ).toBeCloseTo( 0.125 )
-		expect( Easing.easeInOutQuad( 0.5 ) ).toBeCloseTo( 0.5)
-		expect( Easing.easeInOutQuad( 0.75 ) ).toBeCloseTo( 0.875 )
-		expect( Easing.easeInOutQuad( 1 ) ).toBeCloseTo( 1 )
+		expect( easing.easeInOutQuad( 0 ) ).toBeCloseTo( 0 )
+		expect( easing.easeInOutQuad( 0.25 ) ).toBeCloseTo( 0.125 )
+		expect( easing.easeInOutQuad( 0.5 ) ).toBeCloseTo( 0.5)
+		expect( easing.easeInOutQuad( 0.75 ) ).toBeCloseTo( 0.875 )
+		expect( easing.easeInOutQuad( 1 ) ).toBeCloseTo( 1 )
 	} )
 
 	it( 'easeInCubic', () => {
-		expect( Easing.easeInCubic( 0 ) ).toBeCloseTo( 0 )
-		expect( Easing.easeInCubic( 0.5 ) ).toBeCloseTo( 0.125 )
-		expect( Easing.easeInCubic( 1 ) ).toBeCloseTo( 1 )
+		expect( easing.easeInCubic( 0 ) ).toBeCloseTo( 0 )
+		expect( easing.easeInCubic( 0.5 ) ).toBeCloseTo( 0.125 )
+		expect( easing.easeInCubic( 1 ) ).toBeCloseTo( 1 )
 	} )
 
 	it( 'easeOutCubic', () => {
-		expect( Easing.easeOutCubic( 0 ) ).toBeCloseTo( 0 )
-		expect( Easing.easeOutCubic( 0.5 ) ).toBeCloseTo( 0.875 )
-		expect( Easing.easeOutCubic( 1 ) ).toBeCloseTo( 1 )
+		expect( easing.easeOutCubic( 0 ) ).toBeCloseTo( 0 )
+		expect( easing.easeOutCubic( 0.5 ) ).toBeCloseTo( 0.875 )
+		expect( easing.easeOutCubic( 1 ) ).toBeCloseTo( 1 )
 	} )
 
 	it( 'easeInOutCubic', () => {
-		expect( Easing.easeInOutCubic( 0 ) ).toBeCloseTo( 0 )
-		expect( Easing.easeInOutCubic( 0.5 ) ).toBeCloseTo( 0.5 )
-		expect( Easing.easeInOutCubic( 1 ) ).toBeCloseTo( 1 )
+		expect( easing.easeInOutCubic( 0 ) ).toBeCloseTo( 0 )
+		expect( easing.easeInOutCubic( 0.5 ) ).toBeCloseTo( 0.5 )
+		expect( easing.easeInOutCubic( 1 ) ).toBeCloseTo( 1 )
 	} )
 
 	it( 'easeInQuart', () => {
-		expect( Easing.easeInQuart( 0 ) ).toBeCloseTo( 0 )
-		expect( Easing.easeInQuart( 0.5 ) ).toBeCloseTo( 0.0625 )
-		expect( Easing.easeInQuart( 1 ) ).toBeCloseTo( 1 )
+		expect( easing.easeInQuart( 0 ) ).toBeCloseTo( 0 )
+		expect( easing.easeInQuart( 0.5 ) ).toBeCloseTo( 0.0625 )
+		expect( easing.easeInQuart( 1 ) ).toBeCloseTo( 1 )
 	} )
 
 	it( 'easeOutQuart', () => {
-		expect( Easing.easeOutQuart( 0 ) ).toBeCloseTo( 0 )
-		expect( Easing.easeOutQuart( 0.5 ) ).toBeCloseTo( 0.9375 )
-		expect( Easing.easeOutQuart( 1 ) ).toBeCloseTo( 1 )
+		expect( easing.easeOutQuart( 0 ) ).toBeCloseTo( 0 )
+		expect( easing.easeOutQuart( 0.5 ) ).toBeCloseTo( 0.9375 )
+		expect( easing.easeOutQuart( 1 ) ).toBeCloseTo( 1 )
 	} )
 
 	it( 'easeInOutQuart', () => {
-		expect( Easing.easeInOutQuart( 0 ) ).toBeCloseTo( 0 )
-		expect( Easing.easeInOutQuart( 0.5 ) ).toBeCloseTo( 0.5 )
-		expect( Easing.easeInOutQuart( 1 ) ).toBeCloseTo( 1 )
+		expect( easing.easeInOutQuart( 0 ) ).toBeCloseTo( 0 )
+		expect( easing.easeInOutQuart( 0.5 ) ).toBeCloseTo( 0.5 )
+		expect( easing.easeInOutQuart( 1 ) ).toBeCloseTo( 1 )
 	} )
 
 	it( 'easeInQuint', () => {
-		expect( Easing.easeInQuint( 0 ) ).toBeCloseTo( 0 )
-		expect( Easing.easeInQuint( 0.5 ) ).toBeCloseTo( 0.03125 )
-		expect( Easing.easeInQuint( 1 ) ).toBeCloseTo( 1 )
+		expect( easing.easeInQuint( 0 ) ).toBeCloseTo( 0 )
+		expect( easing.easeInQuint( 0.5 ) ).toBeCloseTo( 0.03125 )
+		expect( easing.easeInQuint( 1 ) ).toBeCloseTo( 1 )
 	} )
 
 	it( 'easeOutQuint', () => {
-		expect( Easing.easeOutQuint( 0 ) ).toBeCloseTo( 0 )
-		expect( Easing.easeOutQuint( 0.5 ) ).toBeCloseTo( 0.96875 )
-		expect( Easing.easeOutQuint( 1 ) ).toBeCloseTo( 1 )
+		expect( easing.easeOutQuint( 0 ) ).toBeCloseTo( 0 )
+		expect( easing.easeOutQuint( 0.5 ) ).toBeCloseTo( 0.96875 )
+		expect( easing.easeOutQuint( 1 ) ).toBeCloseTo( 1 )
 	} )
 
 	it( 'easeInOutQuint', () => {
-		expect( Easing.easeInOutQuint( 0 ) ).toBeCloseTo( 0 )
-		expect( Easing.easeInOutQuint( 0.5 ) ).toBeCloseTo( 0.5 )
-		expect( Easing.easeInOutQuint( 1 ) ).toBeCloseTo( 1 )
+		expect( easing.easeInOutQuint( 0 ) ).toBeCloseTo( 0 )
+		expect( easing.easeInOutQuint( 0.5 ) ).toBeCloseTo( 0.5 )
+		expect( easing.easeInOutQuint( 1 ) ).toBeCloseTo( 1 )
 	} )
 
 	it( 'easeInSine', () => {
-		expect( Easing.easeInSine( 0 ) ).toBeCloseTo( 0 )
-		expect( Easing.easeInSine( 0.5 ) ).toBeCloseTo( 1 - Math.cos( Math.PI / 4 ) )
-		expect( Easing.easeInSine( 1 ) ).toBeCloseTo( 1 )
+		expect( easing.easeInSine( 0 ) ).toBeCloseTo( 0 )
+		expect( easing.easeInSine( 0.5 ) ).toBeCloseTo( 1 - Math.cos( Math.PI / 4 ) )
+		expect( easing.easeInSine( 1 ) ).toBeCloseTo( 1 )
 	} )
 
 	it( 'easeOutSine', () => {
-		expect( Easing.easeOutSine( 0 ) ).toBeCloseTo( 0 )
-		expect( Easing.easeOutSine( 0.5 ) ).toBeCloseTo( Math.sin( Math.PI / 4 ) )
-		expect( Easing.easeOutSine( 1 ) ).toBeCloseTo( 1 )
+		expect( easing.easeOutSine( 0 ) ).toBeCloseTo( 0 )
+		expect( easing.easeOutSine( 0.5 ) ).toBeCloseTo( Math.sin( Math.PI / 4 ) )
+		expect( easing.easeOutSine( 1 ) ).toBeCloseTo( 1 )
 	} )
 
 	it( 'easeInOutSine', () => {
-		expect( Easing.easeInOutSine( 0 ) ).toBeCloseTo( 0 )
-		expect( Easing.easeInOutSine( 0.5 ) ).toBeCloseTo( 0.5 )
-		expect( Easing.easeInOutSine( 1 ) ).toBeCloseTo( 1 )
+		expect( easing.easeInOutSine( 0 ) ).toBeCloseTo( 0 )
+		expect( easing.easeInOutSine( 0.5 ) ).toBeCloseTo( 0.5 )
+		expect( easing.easeInOutSine( 1 ) ).toBeCloseTo( 1 )
 	} )
 
 	it( 'easeInExpo', () => {
-		expect( Easing.easeInExpo( 0 ) ).toBeCloseTo( 0 )
-		expect( Easing.easeInExpo( 1 ) ).toBeCloseTo( 1 )
+		expect( easing.easeInExpo( 0 ) ).toBeCloseTo( 0 )
+		expect( easing.easeInExpo( 1 ) ).toBeCloseTo( 1 )
 	} )
 
 	it( 'easeOutExpo', () => {
-		expect( Easing.easeOutExpo( 0 ) ).toBeCloseTo( 0 )
-		expect( Easing.easeOutExpo( 1 ) ).toBeCloseTo( 1 )
+		expect( easing.easeOutExpo( 0 ) ).toBeCloseTo( 0 )
+		expect( easing.easeOutExpo( 1 ) ).toBeCloseTo( 1 )
 	} )
 
 	it( 'easeInOutExpo', () => {
-		expect( Easing.easeInOutExpo( 0 ) ).toBeCloseTo( 0 )
-		expect( Easing.easeInOutExpo( 1 ) ).toBeCloseTo( 1 )
-		expect( Easing.easeInOutExpo( 0.5 ) ).toBeCloseTo( 0.5 )
-		expect( Easing.easeInOutExpo( 0.3 ) ).toBeCloseTo( 0.03125 )
+		expect( easing.easeInOutExpo( 0 ) ).toBeCloseTo( 0 )
+		expect( easing.easeInOutExpo( 1 ) ).toBeCloseTo( 1 )
+		expect( easing.easeInOutExpo( 0.5 ) ).toBeCloseTo( 0.5 )
+		expect( easing.easeInOutExpo( 0.3 ) ).toBeCloseTo( 0.03125 )
 	} )
 
 	it( 'easeInCirc', () => {
-		expect( Easing.easeInCirc( 0 ) ).toBeCloseTo( 0 )
-		expect( Easing.easeInCirc( 1 ) ).toBeCloseTo( 1 )
+		expect( easing.easeInCirc( 0 ) ).toBeCloseTo( 0 )
+		expect( easing.easeInCirc( 1 ) ).toBeCloseTo( 1 )
 	} )
 
 	it( 'easeOutCirc', () => {
-		expect( Easing.easeOutCirc( 0 ) ).toBeCloseTo( 0 )
-		expect( Easing.easeOutCirc( 1 ) ).toBeCloseTo( 1 )
+		expect( easing.easeOutCirc( 0 ) ).toBeCloseTo( 0 )
+		expect( easing.easeOutCirc( 1 ) ).toBeCloseTo( 1 )
 	} )
 
 	it( 'easeInOutCirc', () => {
-		expect( Easing.easeInOutCirc( 0 ) ).toBeCloseTo( 0 )
-		expect( Easing.easeInOutCirc( 0.5 ) ).toBeCloseTo( 0.5 )
-		expect( Easing.easeInOutCirc( 1 ) ).toBeCloseTo( 1 )
+		expect( easing.easeInOutCirc( 0 ) ).toBeCloseTo( 0 )
+		expect( easing.easeInOutCirc( 0.5 ) ).toBeCloseTo( 0.5 )
+		expect( easing.easeInOutCirc( 1 ) ).toBeCloseTo( 1 )
 	} )
 
 	it( 'easeInBack', () => {
-		expect( Easing.easeInBack( 0 ) ).toBeCloseTo( 0 )
-		expect( Easing.easeInBack( 1 ) ).toBeCloseTo( 1 )
+		expect( easing.easeInBack( 0 ) ).toBeCloseTo( 0 )
+		expect( easing.easeInBack( 1 ) ).toBeCloseTo( 1 )
 	} )
 
 	it( 'easeOutBack', () => {
-		expect( Easing.easeOutBack( 0 ) ).toBeCloseTo( 0 )
-		expect( Easing.easeOutBack( 1 ) ).toBeCloseTo( 1 )
+		expect( easing.easeOutBack( 0 ) ).toBeCloseTo( 0 )
+		expect( easing.easeOutBack( 1 ) ).toBeCloseTo( 1 )
 	} )
 
 	it( 'easeInOutBack', () => {
-		expect( Easing.easeInOutBack( 0 ) ).toBeCloseTo( 0 )
-		expect( Easing.easeInOutBack( 1 ) ).toBeCloseTo( 1 )
+		expect( easing.easeInOutBack( 0 ) ).toBeCloseTo( 0 )
+		expect( easing.easeInOutBack( 1 ) ).toBeCloseTo( 1 )
 	} )
 
 	it( 'easeInElastic', () => {
-		expect( Easing.easeInElastic( 0 ) ).toBeCloseTo( 0 )
-		expect( Easing.easeInElastic( 0.5 ) ).toBeCloseTo( -4.403008748925139e-17 )
-		expect( Easing.easeInElastic( 1 ) ).toBeCloseTo( 1 )
+		expect( easing.easeInElastic( 0 ) ).toBeCloseTo( 0 )
+		expect( easing.easeInElastic( 0.5 ) ).toBeCloseTo( -4.403008748925139e-17 )
+		expect( easing.easeInElastic( 1 ) ).toBeCloseTo( 1 )
 	} )
 
 	it( 'easeOutElastic', () => {
-		expect( Easing.easeOutElastic( 0 ) ).toBeCloseTo( 0 )
-		expect( Easing.easeOutElastic( 0.2 ) ).toBeCloseTo( 1.25 )
-		expect( Easing.easeOutElastic( 1 ) ).toBeCloseTo( 1 )
+		expect( easing.easeOutElastic( 0 ) ).toBeCloseTo( 0 )
+		expect( easing.easeOutElastic( 0.2 ) ).toBeCloseTo( 1.25 )
+		expect( easing.easeOutElastic( 1 ) ).toBeCloseTo( 1 )
 	} )
 
 	it( 'easeInOutElastic', () => {
-		expect( Easing.easeInOutElastic( 0 ) ).toBeCloseTo( 0 )
-		expect( Easing.easeInOutElastic( 0.2 ) ).toBeCloseTo( -0.0078125 )
-		expect( Easing.easeInOutElastic( 1 ) ).toBeCloseTo( 1 )
-		expect( Easing.easeInOutElastic( 2 ) ).toBeCloseTo( 1.0000000004656613 )
+		expect( easing.easeInOutElastic( 0 ) ).toBeCloseTo( 0 )
+		expect( easing.easeInOutElastic( 0.2 ) ).toBeCloseTo( -0.0078125 )
+		expect( easing.easeInOutElastic( 1 ) ).toBeCloseTo( 1 )
+		expect( easing.easeInOutElastic( 2 ) ).toBeCloseTo( 1.0000000004656613 )
 	} )
 
 	it( 'easeOutBounce', () => {
-		expect( Easing.easeOutBounce( 0 ) ).toBeCloseTo( 0 )
-		expect( Easing.easeOutBounce( 0.5 ) ).toBeCloseTo( 0.765625 )
-		expect( Easing.easeOutBounce( 0.8 ) ).toBeCloseTo( 0.94 )
-		expect( Easing.easeOutBounce( 1 ) ).toBeCloseTo( 1 )
+		expect( easing.easeOutBounce( 0 ) ).toBeCloseTo( 0 )
+		expect( easing.easeOutBounce( 0.5 ) ).toBeCloseTo( 0.765625 )
+		expect( easing.easeOutBounce( 0.8 ) ).toBeCloseTo( 0.94 )
+		expect( easing.easeOutBounce( 1 ) ).toBeCloseTo( 1 )
 	} )
 
 	it( 'easeInBounce', () => {
-		expect( Easing.easeInBounce( 0 ) ).toBeCloseTo( 0 )
-		expect( Easing.easeInBounce( 1 ) ).toBeCloseTo( 1 )
+		expect( easing.easeInBounce( 0 ) ).toBeCloseTo( 0 )
+		expect( easing.easeInBounce( 1 ) ).toBeCloseTo( 1 )
 	} )
 
 	it( 'easeInOutBounce', () => {
-		expect( Easing.easeInOutBounce( 0 ) ).toBeCloseTo( 0 )
-		expect( Easing.easeInOutBounce( 1 ) ).toBeCloseTo( 1 )
-		expect( Easing.easeInOutBounce( 0.5 ) ).toBeCloseTo( 0.5 )
+		expect( easing.easeInOutBounce( 0 ) ).toBeCloseTo( 0 )
+		expect( easing.easeInOutBounce( 1 ) ).toBeCloseTo( 1 )
+		expect( easing.easeInOutBounce( 0.5 ) ).toBeCloseTo( 0.5 )
 	} )
 
 } )

@@ -1,5 +1,5 @@
 import { lerp } from '@/interpolation'
-import { Easing, type EasingFn } from '@/easing'
+import { easing, type EasingFn } from '@/easing'
 
 
 /**
@@ -137,7 +137,7 @@ export class Tween
 		const {
 			from, duration = Tween.Duration,
 			strategy = 'raf', Hz = 120,
-			easing = Easing.linear, onTick, onEnd,
+			easing: easingFn = easing.linear, onTick, onEnd,
 		} = options
 
 		if ( duration <= 0 ) {
@@ -180,7 +180,7 @@ export class Tween
 			 * Eased time.
 			 * 
 			 */
-			const eased = easing( time )
+			const eased = easingFn( time )
 			/**
 			 * Interpolated value at the current time step.
 			 * 
