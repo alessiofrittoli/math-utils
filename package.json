@@ -85,12 +85,12 @@
 		"test:coverage:serve": "concurrently --prefix none --kill-others \"pnpm test:coverage\" \"pnpm test:serve-coverage\""
 	},
 	"peerDependencies": {
-		"@alessiofrittoli/web-utils": "^1.20.0"
+		"@alessiofrittoli/web-utils": "^2.3.0"
 	},
 	"devDependencies": {
 		"@alessiofrittoli/node-scripts": "^4.0.0",
 		"@alessiofrittoli/package-configs": "^1.6.0",
-		"@alessiofrittoli/web-utils": "^1.20.0",
+		"@alessiofrittoli/web-utils": "^2.3.0",
 		"@types/node": "^24.19.1",
 		"@vitest/coverage-v8": "^5.0.3",
 		"concurrently": "^9.2.1",

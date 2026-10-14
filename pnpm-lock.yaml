@@ -10,13 +10,13 @@ importers:
     devDependencies:
       '@alessiofrittoli/node-scripts':
         specifier: ^4.0.0
-        version: 4.0.0(@alessiofrittoli/abort-controller@0.1.0)(@alessiofrittoli/exception@3.5.0)(@alessiofrittoli/package-configs@1.6.0(@eslint/js@10.0.1(eslint@10.0.2(supports-color@8.1.1)))(eslint@10.0.2(supports-color@8.1.1))(oxlint@1.88.0)(prettier-plugin-sort-imports@1.8.11(typescript@6.0.3))(prettier@3.9.10)(tsdown@0.23.1(typescript@6.0.3))(typescript@6.0.3)(vite@8.3.4(@types/node@24.19.2)(esbuild@0.27.0))(vitest@5.0.4))(@alessiofrittoli/web-utils@1.20.0)
+        version: 4.0.0(@alessiofrittoli/abort-controller@0.1.0)(@alessiofrittoli/exception@3.5.0)(@alessiofrittoli/package-configs@1.6.0(@eslint/js@10.0.1(eslint@10.0.2(supports-color@8.1.1)))(eslint@10.0.2(supports-color@8.1.1))(oxlint@1.88.0)(prettier-plugin-sort-imports@1.8.11(typescript@6.0.3))(prettier@3.9.10)(tsdown@0.23.1(typescript@6.0.3))(typescript@6.0.3)(vite@8.3.4(@types/node@24.19.2)(esbuild@0.27.0))(vitest@5.0.4))(@alessiofrittoli/web-utils@2.3.0)
       '@alessiofrittoli/package-configs':
         specifier: ^1.6.0
         version: 1.6.0(@eslint/js@10.0.1(eslint@10.0.2(supports-color@8.1.1)))(eslint@10.0.2(supports-color@8.1.1))(oxlint@1.88.0)(prettier-plugin-sort-imports@1.8.11(typescript@6.0.3))(prettier@3.9.10)(tsdown@0.23.1(typescript@6.0.3))(typescript@6.0.3)(vite@8.3.4(@types/node@24.19.2)(esbuild@0.27.0))(vitest@5.0.4)
       '@alessiofrittoli/web-utils':
-        specifier: ^1.20.0
-        version: 1.20.0
+        specifier: ^2.3.0
+        version: 2.3.0
       '@types/node':
         specifier: ^24.19.1
         version: 24.19.2
@@ -68,11 +68,21 @@ packages:
   '@alessiofrittoli/exception@3.5.0':
     resolution: {integrity: sha512-8WGEiJCr9zFgPzXvTl5Sgh+e1bBldGfMma4EGIa+yLeHpgmsS+zQ8d7woh2YU/yN65DoKGHPKTArWLAvnEwANg==}
 
+  '@alessiofrittoli/fetcher@1.1.0':
+    resolution: {integrity: sha512-JidJxeL8AMm6k2g6AcG368nQmqskh7Hz7CfYnJEBg+BP03MuQQ0MBQpgXCLeyTFkGdtlrY6sMOBP6vk3xG/q+g==}
+
   '@alessiofrittoli/math-utils@1.17.0':
     resolution: {integrity: sha512-WMvxBljj2Ahyv8xPyiy1lESUO5Poq9edYr1pZS+KawodDU2k+d0hWAz7KDQymCCzAz4YkuLkr0CDl0k85t0RhA==}
 
+  '@alessiofrittoli/math-utils@2.0.0':
+    resolution: {integrity: sha512-kNK5+q/eXjh0GhF30H3ipZ228fM4VpMaI/4OIjudU0CdDrNGj/5xGHfwH3FWP0AalGnHC7X7+zHsMYduyQr4Ig==}
+
   '@alessiofrittoli/node-scripts@3.2.0':
     resolution: {integrity: sha512-2hjjsUpaNFUQsVIZR0AOkYPMPAuFtgr1zQDDLJucqGXljLy4fVXViLFiVioXg6RwJgOVs/HDjAmqf7WZuah5tQ==}
+
+  '@alessiofrittoli/node-scripts@3.5.0':
+    resolution: {integrity: sha512-mRrZEGibFttjaHfoLNuPVlKgVw9CUnMw6QU5RNVjwRw2QNNurUjIbWEjIDciZsTYcDiDBYmC98LsZkRIcKiU+w==}
+    engines: {node: '>=24.15.0', pnpm: '>=11.27.1'}
 
   '@alessiofrittoli/node-scripts@4.0.0':
     resolution: {integrity: sha512-4JOy2bnhMHjT1Qq+nsRSJa9DkVk11IbQKtnaYwQyo//EiTHSUkMelEI/VwwGW/hMjueB+/ORMwCWAuck9k3rSQ==}
@@ -126,8 +136,14 @@ packages:
   '@alessiofrittoli/url-utils@3.7.1':
     resolution: {integrity: sha512-d4IY0H2lQoXt8Iq3riD7nYvfa+VEAnkBh2R9mvZNxbqQo0TmGc32+mf0w+FKviZ/xth2JhusVoSG804dHXHIdg==}
 
+  '@alessiofrittoli/url-utils@4.0.0':
+    resolution: {integrity: sha512-MFtsYYNH2HnwasxkdTZ/Emgjzu1vwoI0bGeC6RXpX4Vv3W3AQDUdaEcFtD+r0nFXwt0tDbg4b+5ynUCZ+/oyiA==}
+
   '@alessiofrittoli/web-utils@1.20.0':
     resolution: {integrity: sha512-433XOudif9a9TfU7EZr+GvedeUoVFk1CnuMKUL00Gdw/hJZLiyEjzO90oVHn+KVwR5x+Ig4/9JWBVS69VCfvHA==}
+
+  '@alessiofrittoli/web-utils@2.3.0':
+    resolution: {integrity: sha512-j5QOHYMn6XRWDPlcet0BEEs2859qTGKXW3GEALJDHa1SfR2YHeCA9iZoR4GbwTikXzctWdHq5zAXRqUqrNsilg==}
 
   '@babel/helper-string-parser@7.29.7':
     resolution: {integrity: sha512-Pb5ijPrZ89GDH8223L4UP8i6QApWxs04RbPQJTeWDV0/keR2E36MeKnyr6LYmUUvqRRI+Iv87SuF1W6ErINzYw==}
@@ -1619,7 +1635,22 @@ snapshots:
 
   '@alessiofrittoli/exception@3.5.0': {}
 
+  '@alessiofrittoli/fetcher@1.1.0':
+    dependencies:
+      '@alessiofrittoli/abort-controller': 0.1.0
+      '@alessiofrittoli/chain-functions': 2.5.0
+      '@alessiofrittoli/event-emitter': 1.6.0
+      '@alessiofrittoli/exception': 3.5.0
+      '@alessiofrittoli/node-scripts': 3.5.0
+      '@alessiofrittoli/type-utils': 1.9.0
+      '@alessiofrittoli/url-utils': 3.7.1
+      '@alessiofrittoli/web-utils': 1.20.0
+
   '@alessiofrittoli/math-utils@1.17.0':
+    dependencies:
+      '@alessiofrittoli/web-utils': 1.20.0
+
+  '@alessiofrittoli/math-utils@2.0.0':
     dependencies:
       '@alessiofrittoli/web-utils': 1.20.0
 
@@ -1630,12 +1661,19 @@ snapshots:
       '@alessiofrittoli/exception': 3.5.0
       '@alessiofrittoli/type-utils': 1.9.0
 
-  '@alessiofrittoli/node-scripts@4.0.0(@alessiofrittoli/abort-controller@0.1.0)(@alessiofrittoli/exception@3.5.0)(@alessiofrittoli/package-configs@1.6.0(@eslint/js@10.0.1(eslint@10.0.2(supports-color@8.1.1)))(eslint@10.0.2(supports-color@8.1.1))(oxlint@1.88.0)(prettier-plugin-sort-imports@1.8.11(typescript@6.0.3))(prettier@3.9.10)(tsdown@0.23.1(typescript@6.0.3))(typescript@6.0.3)(vite@8.3.4(@types/node@24.19.2)(esbuild@0.27.0))(vitest@5.0.4))(@alessiofrittoli/web-utils@1.20.0)':
+  '@alessiofrittoli/node-scripts@3.5.0':
+    dependencies:
+      '@alessiofrittoli/abort-controller': 0.1.0
+      '@alessiofrittoli/event-emitter': 1.6.0
+      '@alessiofrittoli/exception': 3.5.0
+      '@alessiofrittoli/web-utils': 2.3.0
+
+  '@alessiofrittoli/node-scripts@4.0.0(@alessiofrittoli/abort-controller@0.1.0)(@alessiofrittoli/exception@3.5.0)(@alessiofrittoli/package-configs@1.6.0(@eslint/js@10.0.1(eslint@10.0.2(supports-color@8.1.1)))(eslint@10.0.2(supports-color@8.1.1))(oxlint@1.88.0)(prettier-plugin-sort-imports@1.8.11(typescript@6.0.3))(prettier@3.9.10)(tsdown@0.23.1(typescript@6.0.3))(typescript@6.0.3)(vite@8.3.4(@types/node@24.19.2)(esbuild@0.27.0))(vitest@5.0.4))(@alessiofrittoli/web-utils@2.3.0)':
     dependencies:
       '@alessiofrittoli/abort-controller': 0.1.0
       '@alessiofrittoli/exception': 3.5.0
       '@alessiofrittoli/package-configs': 1.6.0(@eslint/js@10.0.1(eslint@10.0.2(supports-color@8.1.1)))(eslint@10.0.2(supports-color@8.1.1))(oxlint@1.88.0)(prettier-plugin-sort-imports@1.8.11(typescript@6.0.3))(prettier@3.9.10)(tsdown@0.23.1(typescript@6.0.3))(typescript@6.0.3)(vite@8.3.4(@types/node@24.19.2)(esbuild@0.27.0))(vitest@5.0.4)
-      '@alessiofrittoli/web-utils': 1.20.0
+      '@alessiofrittoli/web-utils': 2.3.0
 
   '@alessiofrittoli/package-configs@1.6.0(@eslint/js@10.0.1(eslint@10.0.2(supports-color@8.1.1)))(eslint@10.0.2(supports-color@8.1.1))(oxlint@1.88.0)(prettier-plugin-sort-imports@1.8.11(typescript@6.0.3))(prettier@3.9.10)(tsdown@0.23.1(typescript@6.0.3))(typescript@6.0.3)(vite@8.3.4(@types/node@24.19.2)(esbuild@0.27.0))(vitest@5.0.4)':
     dependencies:
@@ -1659,12 +1697,25 @@ snapshots:
     dependencies:
       '@alessiofrittoli/web-utils': 1.20.0
 
+  '@alessiofrittoli/url-utils@4.0.0':
+    dependencies:
+      '@alessiofrittoli/web-utils': 1.20.0
+
   '@alessiofrittoli/web-utils@1.20.0':
     dependencies:
       '@alessiofrittoli/date-utils': 4.1.0
       '@alessiofrittoli/math-utils': 1.17.0
       '@alessiofrittoli/type-utils': 1.9.0
       '@alessiofrittoli/url-utils': 3.7.1
+
+  '@alessiofrittoli/web-utils@2.3.0':
+    dependencies:
+      '@alessiofrittoli/date-utils': 4.1.0
+      '@alessiofrittoli/exception': 3.5.0
+      '@alessiofrittoli/fetcher': 1.1.0
+      '@alessiofrittoli/math-utils': 2.0.0
+      '@alessiofrittoli/type-utils': 1.9.0
+      '@alessiofrittoli/url-utils': 4.0.0
 
   '@babel/helper-string-parser@7.29.7': {}
 
