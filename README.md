@@ -34,7 +34,7 @@ This lightweight TypeScript utility library comes with common and utility math f
   - [Random number functions](https://github.com/alessiofrittoli/math-utils/blob/master/docs/random/README.md)
   - [Types](https://github.com/alessiofrittoli/math-utils/blob/master/docs/types/README.md)
 - [Development](#development)
-  - [Install depenendencies](#install-depenendencies)
+  - [Install dependencies](#install-dependencies)
   - [Build the source code](#build-the-source-code)
   - [ESLint](#eslint)
   - [Jest](#jest)
@@ -72,7 +72,7 @@ pnpm i @alessiofrittoli/math-utils
 
 ### Development
 
-#### Install depenendencies
+#### Install dependencies
 
 ```bash
 npm install
@@ -94,7 +94,7 @@ pnpm build
 
 #### [ESLint](https://www.npmjs.com/package/eslint)
 
-warnings / errors check.
+Run warnings and errors checks.
 
 ```bash
 pnpm lint

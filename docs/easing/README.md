@@ -7,9 +7,9 @@
 The `Easing` object defines and exports the most commonly used easing functions that allows you to remaps the timeline of the given time.
 
 ```ts
-import { easing } from "@alessiofrittoli/math-utils";
+import { easing } from '@alessiofrittoli/math-utils'
 
-easing.linear(20);
+easing.linear(20)
 ```
 
 #### EasingFn
@@ -19,7 +19,7 @@ Represents a time easing function.
 All easing functions must follow the `EasingFn` function signature type.
 
 ```ts
-(time: number) => number;
+;(time: number) => number
 ```
 
 It accepts `time` and returns the eased time.
