@@ -1,78 +1,60 @@
 import { generateUUID, mtRand, randomNumUUID, randomUUID } from '@/random'
+import { describe, expect, it, vi } from 'vitest'
 
-describe( 'mtRand', () => {
-
-	it( 'returns a random number', () => {
+describe('mtRand', () => {
+	it('returns a random number', () => {
 		const result = mtRand()
-		expect( result ).toBeGreaterThanOrEqual( 0 )
-		expect( result ).toBeLessThanOrEqual( 0x7FFFFFFF )
-	} )
+		expect(result).toBeGreaterThanOrEqual(0)
+		expect(result).toBeLessThanOrEqual(0x7fffffff)
+	})
 
+	it('returns a random number in the given range', () => {
+		const result = mtRand(100, 200)
+		expect(result).toBeGreaterThanOrEqual(100)
+		expect(result).toBeLessThanOrEqual(200)
+	})
 
-	it( 'returns a random number in the given range', () => {
-		const result = mtRand( 100, 200 )
-		expect( result ).toBeGreaterThanOrEqual( 100 )
-		expect( result ).toBeLessThanOrEqual( 200 )
-	} )
+	it('handles negative numbers', () => {
+		const result = mtRand(-5, -20)
+		expect(result).toBeLessThanOrEqual(-5)
+		expect(result).toBeGreaterThanOrEqual(-20)
+	})
+})
 
-
-	it( 'handles negative numbers', () => {
-		const result = mtRand( -5, -20 )		
-		expect( result ).toBeLessThanOrEqual( -5 )
-		expect( result ).toBeGreaterThanOrEqual( -20 )
-	} )
-
-} )
-
-
-describe( 'randomNumUUID', () => {
-
-	it( 'generates a properly formatted UUID string', () => {
+describe('randomNumUUID', () => {
+	it('generates a properly formatted UUID string', () => {
 		const result = randomNumUUID()
-		expect( result.split( '-' ).length ).toBe( 5 )
-	} )
+		expect(result.split('-').length).toBe(5)
+	})
+})
 
-} )
+describe('generateUUID', () => {
+	it('generates a properly formatted v4 UUID string', () => {
+		const result = generateUUID()
+		const group = result.split('-')
 
+		expect(group.length).toBe(5)
+		expect(group.at(2)?.at(0)).toBe('4')
+	})
+})
 
-describe( 'generateUUID', () => {
-
-	it( 'generates a properly formatted v4 UUID string', () => {
-		
-		const result	= generateUUID()
-		const group		= result.split( '-' )
-
-		expect( group.length ).toBe( 5 )
-		expect( group.at( 2 )?.at( 0 ) ).toBe( '4' )
-
-	} )
-
-} )
-
-
-describe( 'randomUUID', () => {
-	
-	afterAll( () => {
-		jest.clearAllMocks()
-	} )
-
-	if ( typeof crypto !== 'undefined' ) {
-		it( 'generates a properly formatted UUID with crypto.randomUUID', () => {
-			const cryptoRandomMock = jest.spyOn( crypto, 'randomUUID' )
+describe('randomUUID', () => {
+	if (typeof crypto !== 'undefined') {
+		it('generates a properly formatted UUID with crypto.randomUUID', () => {
+			const cryptoRandomMock = vi.spyOn(crypto, 'randomUUID')
 			const result = randomUUID()
-			expect( result.split( '-' ).length ).toBe( 5 )
-			expect ( cryptoRandomMock ).toHaveBeenCalledTimes( 1 )
-		} )
+			expect(result.split('-').length).toBe(5)
+			expect(cryptoRandomMock).toHaveBeenCalledTimes(1)
+		})
 	}
 
-	it( 'generates a properly formatted UUID string without crypto.randomUUID', () => {
-		if ( typeof crypto !== 'undefined' ) {
-			// eslint-disable-next-line @typescript-eslint/no-explicit-any
-			;( crypto as any ).randomUUID = undefined
-		}		
+	it('generates a properly formatted UUID string without crypto.randomUUID', () => {
+		if (typeof crypto !== 'undefined') {
+			// oxlint-disable-next-line typescript/no-explicit-any
+			;(crypto as any).randomUUID = undefined
+		}
 
 		const result = randomUUID()
-		expect( result.split( '-' ).length ).toBe( 5 )
-	} )
-
-} )
+		expect(result.split('-').length).toBe(5)
+	})
+})

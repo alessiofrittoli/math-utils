@@ -1,20 +1,17 @@
-import { lerp } from '@/interpolation'
 import { easing, type EasingFn } from '@/easing'
-
+import { lerp } from '@/interpolation'
 
 /**
  * Callback executed on each interpolation tick.
- * 
+ *
  * @param value The current interpolated value.
  */
-export type TickHandler = ( value: number ) => void
+export type TickHandler = (value: number) => void
 
-
-interface TweenBaseOptions
-{
+interface TweenBaseOptions {
 	/**
 	 * Initial value of the interpolation.
-	 * 
+	 *
 	 */
 	from: number
 	/**
@@ -25,7 +22,7 @@ interface TweenBaseOptions
 	duration?: number
 	/**
 	 * Callback executed on each interpolation tick.
-	 * 
+	 *
 	 */
 	onTick: TickHandler
 	/**
@@ -36,60 +33,59 @@ interface TweenBaseOptions
 	easing?: EasingFn
 	/**
 	 * Callback executed when the interpolation completes.
-	 * 
+	 *
 	 */
 	onEnd?: TickHandler
 }
 
-
 /**
  * Defines customization options required by `Tween.to()` method.
- * 
+ *
  */
-export type TweenOptions = TweenBaseOptions & (
-	| {
-		/**
-		 * Custom tick rate in Hz.
-		 *
-		 * When `strategy` is set to `timer`, ticks are driven by a timer
-		 * and will continue running even if the document is not visible.
-		 *
-		 * @default 120
-		 */
-		Hz?: number
-		/**
-		 * Disables GPU-synchronized updates.
-		 *
-		 * The tween falls back to a timer-based loop.
-		 */
-		strategy: 'timer'
-	}
-	| {
-		/**
-		 * Not available when GPU synchronization is enabled.
-		 * 
-		 */
-		Hz?: never
-		/**
-		 * Enables GPU-synchronized updates using `requestAnimationFrame`.
-		 *
-		 * Note that browsers may pause updates when the document is not visible.
-		 */
-		strategy?: 'raf'
-	}
-)
-
+export type TweenOptions = TweenBaseOptions &
+	(
+		| {
+				/**
+				 * Custom tick rate in Hz.
+				 *
+				 * When `strategy` is set to `timer`, ticks are driven by a timer
+				 * and will continue running even if the document is not visible.
+				 *
+				 * @default 120
+				 */
+				Hz?: number
+				/**
+				 * Disables GPU-synchronized updates.
+				 *
+				 * The tween falls back to a timer-based loop.
+				 */
+				strategy: 'timer'
+		  }
+		| {
+				/**
+				 * Not available when GPU synchronization is enabled.
+				 *
+				 */
+				Hz?: never
+				/**
+				 * Enables GPU-synchronized updates using `requestAnimationFrame`.
+				 *
+				 * Note that browsers may pause updates when the document is not visible.
+				 */
+				strategy?: 'raf'
+		  }
+	)
 
 /**
  * Provides interpolation between two numeric values over a given duration.
- * 
+ *
  * Supports customizable easing functions and configurable tick strategies
  * (GPU-synchronized or timer-based).
  *
  * @example
  * ```ts
  * const tween = new Tween()
- * 
+ *
  * tween.to( 1, {
  *   from       : 0,
  *   duration   : 500,
@@ -99,31 +95,27 @@ export type TweenOptions = TweenBaseOptions & (
  * } )
  * ```
  */
-export class Tween
-{
+export class Tween {
 	/**
 	 * Indicates whether a tween is currently running.
-	 * 
+	 *
 	 */
 	private running: boolean
 	/**
 	 * Internal abort handler for the active tween.
-	 * 
+	 *
 	 */
 	private setAbort?: () => void
 	/**
 	 * Default tween duration in milliseconds.
-	 * 
+	 *
 	 */
-	static Duration = 200
+	public static Duration = 200
 
-
-	constructor()
-	{
+	public constructor() {
 		this.running = false
 	}
 
-	
 	/**
 	 * Interpolates from the specified starting value to the given target value.
 	 *
@@ -132,35 +124,39 @@ export class Tween
 	 * @param to      Target value.
 	 * @param options Additional tween configuration options. See {@link TweenOptions} for more info.
 	 */
-	to( to: number, options: TweenOptions )
-	{
+	public to(to: number, options: TweenOptions): void {
 		const {
-			from, duration = Tween.Duration,
-			strategy = 'raf', Hz = 120,
-			easing: easingFn = easing.linear, onTick, onEnd,
+			from,
+			duration = Tween.Duration,
+			strategy = 'raf',
+			Hz = 120,
+			easing: easingFn = easing.linear,
+			onTick,
+			onEnd,
 		} = options
 
-		if ( duration <= 0 ) {
-			onTick( to )
-			onEnd?.( to )
+		if (duration <= 0) {
+			onTick(to)
+			onEnd?.(to)
 			return
 		}
 
-		if ( this.running ) this.setAbort?.()
+		if (this.running) this.setAbort?.()
 
-		this.running	= true
-		let abort		= false
-		this.setAbort	= () => { abort = true }
-		const useRAF	= strategy !== 'timer'
-		const startTime	= performance.now()
+		this.running = true
+		let abort = false
+		this.setAbort = (): void => {
+			abort = true
+		}
+		const useRAF = strategy !== 'timer'
+		const startTime = performance.now()
 
 		let frameId: number | undefined
 
-		const tick = ( now: number = performance.now() ) => {
-
-			if ( abort ) {
-				if ( useRAF && typeof frameId !== 'undefined' ) {
-					cancelAnimationFrame( frameId )
+		const tick = (now: number = performance.now()): void => {
+			if (abort) {
+				if (useRAF && typeof frameId !== 'undefined') {
+					cancelAnimationFrame(frameId)
 				}
 				this.running = false
 				return
@@ -168,48 +164,46 @@ export class Tween
 
 			/**
 			 * Elapsed time since tween started.
-			 * 
+			 *
 			 */
 			const elapsed = now - startTime
 			/**
 			 * Time [0-1].
-			 * 
+			 *
 			 */
-			const time = Math.min( 1, elapsed / duration ) // 0 → 1
+			const time = Math.min(1, elapsed / duration) // 0 → 1
 			/**
 			 * Eased time.
-			 * 
+			 *
 			 */
-			const eased = easingFn( time )
+			const eased = easingFn(time)
 			/**
 			 * Interpolated value at the current time step.
-			 * 
+			 *
 			 */
-			const interpolated = lerp( from, to, eased )
+			const interpolated = lerp(from, to, eased)
 
-			onTick( interpolated )
+			onTick(interpolated)
 
-			if ( time < 1 ) {
+			if (time < 1) {
 				// while time is still available, loop-back.
-				if ( useRAF ) {
-					frameId = requestAnimationFrame( tick )
+				if (useRAF) {
+					frameId = requestAnimationFrame(tick)
 					return
 				}
-				return setTimeout( tick, 1000 / Hz )
+				setTimeout(tick, 1000 / Hz)
+				return
 			}
 
 			this.running = false
-			onEnd?.( interpolated )
-
+			onEnd?.(interpolated)
 		}
 
-		if ( useRAF ) {
-			frameId = requestAnimationFrame( tick )
+		if (useRAF) {
+			frameId = requestAnimationFrame(tick)
 			return
 		}
 
 		tick()
-
 	}
-
 }

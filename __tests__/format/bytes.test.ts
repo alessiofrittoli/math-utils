@@ -1,90 +1,82 @@
+import { describe, expect, it } from 'vitest'
 import { formatBytes } from '@/format/bytes'
 
-describe( 'formatBytes', () => {
-
-	it( 'returns formatted bytes string', () => {
-
+describe('formatBytes', () => {
+	it('returns formatted bytes string', () => {
 		const tests = [
 			{
-				input	: 999,
-				output	: '999 bytes',
+				input: 999,
+				output: '999 bytes',
 			},
 			{
-				input	: 1024,
-				output	: '1.024 KB',
+				input: 1024,
+				output: '1.024 KB',
 			},
 			{
-				input	: 1_000_000,
-				output	: '1 MB',
+				input: 1_000_000,
+				output: '1 MB',
 			},
 			{
-				input	: 1_000_000_000,
-				output	: '1 GB',
+				input: 1_000_000_000,
+				output: '1 GB',
 			},
 			{
-				input	: 1_000_000_000_000,
-				output	: '1 TB',
+				input: 1_000_000_000_000,
+				output: '1 TB',
 			},
 			{
-				input	: 1_000_000_000_000_000,
-				output	: '1 PB',
+				input: 1_000_000_000_000_000,
+				output: '1 PB',
 			},
 			{
-				input	: 1_000_000_000_000_000_000,
-				output	: '1 EB',
+				input: 1_000_000_000_000_000_000,
+				output: '1 EB',
 			},
 			{
-				input	: 1_000_000_000_000_000_000_000,
-				output	: '1 ZB',
+				input: 1_000_000_000_000_000_000_000,
+				output: '1 ZB',
 			},
 			{
-				input	: 1_000_000_000_000_000_000_000_000,
-				output	: '1 YB',
+				input: 1_000_000_000_000_000_000_000_000,
+				output: '1 YB',
 			},
 		]
 
-		tests.map( test => {
-			expect( formatBytes( test.input ) )
-				.toBe( test.output )
-		} )
+		tests.map(test => {
+			expect(formatBytes(test.input)).toBe(test.output)
+		})
+	})
 
-	} )
-
-
-	it( 'returns formatted bit string', () => {
-
+	it('returns formatted bit string', () => {
 		const tests = [
 			{
-				input	: 124,
-				output	: '992 bits',
+				input: 124,
+				output: '992 bits',
 			},
 			{
-				input	: 125,
-				output	: '1 Kb',
+				input: 125,
+				output: '1 Kb',
 			},
 			{
-				input	: 12.5e+4,
-				output	: '1 Mb',
+				input: 12.5e4,
+				output: '1 Mb',
 			},
 			{
-				input	: 1.25e+8,
-				output	: '1 Gb',
+				input: 1.25e8,
+				output: '1 Gb',
 			},
 			{
-				input	: 1.25e+11,
-				output	: '1 Tb',
+				input: 1.25e11,
+				output: '1 Tb',
 			},
 			{
-				input	: 1.25e+14,
-				output	: '1 Pb',
+				input: 1.25e14,
+				output: '1 Pb',
 			},
 		]
 
-		tests.map( test => {
-			expect( formatBytes( test.input, true ) )
-				.toBe( test.output )
-		} )
-
-	} )
-
-} )
+		tests.map(test => {
+			expect(formatBytes(test.input, true)).toBe(test.output)
+		})
+	})
+})

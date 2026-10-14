@@ -15,7 +15,7 @@ The `formatNumber` function leverages the [Intl.NumberFormat](https://developer.
 Import the function as follow:
 
 ```ts
-import { formatNumber } from "@alessiofrittoli/math-utils";
+import { formatNumber } from '@alessiofrittoli/math-utils'
 ```
 
 </details>
@@ -66,8 +66,8 @@ formatNumber(
     minimumFractionDigits: 2,
     maximumFractionDigits: 2,
   },
-  "en-US",
-);
+  'en-US',
+)
 // Output: "1,234.57"
 ```
 
@@ -77,11 +77,11 @@ formatNumber(
 formatNumber(
   1000,
   {
-    style: "currency",
-    currency: "EUR",
+    style: 'currency',
+    currency: 'EUR',
   },
-  "de-DE",
-);
+  'de-DE',
+)
 // Output: "1.000,00 €"
 ```
 
@@ -91,18 +91,18 @@ formatNumber(
 formatNumber(
   0.75,
   {
-    style: "percent",
+    style: 'percent',
     minimumFractionDigits: 1,
   },
-  "en-US",
-);
+  'en-US',
+)
 // Output: "75.0%"
 ```
 
 ###### Locale Fallbacks
 
 ```ts
-formatNumber(123456, undefined, ["unknown", "fr-FR"]);
+formatNumber(123456, undefined, ['unknown', 'fr-FR'])
 // Output (in French locale): "123 456"
 ```
 
@@ -253,21 +253,21 @@ A string representing the formatted size.
 <summary>Usage</summary>
 
 ```ts
-import { formatBytes } from "@alessiofrittoli/math-utils";
+import { formatBytes } from '@alessiofrittoli/math-utils'
 
-console.log(formatBytes(999)); // Outputs: '999 bytes'
-console.log(formatBytes(1024)); // Outputs: '1.024 KB'
-console.log(formatBytes(1_000_000)); // Outputs: '1 MB'
-console.log(formatBytes(1_000_000_000)); // Outputs: '1 GB'
-console.log(formatBytes(1_000_000_000_000)); // Outputs: '1 TB'
-console.log(formatBytes(1_000_000_000_000_000)); // Outputs: '1 PB'
+console.log(formatBytes(999)) // Outputs: '999 bytes'
+console.log(formatBytes(1024)) // Outputs: '1.024 KB'
+console.log(formatBytes(1_000_000)) // Outputs: '1 MB'
+console.log(formatBytes(1_000_000_000)) // Outputs: '1 GB'
+console.log(formatBytes(1_000_000_000_000)) // Outputs: '1 TB'
+console.log(formatBytes(1_000_000_000_000_000)) // Outputs: '1 PB'
 
-console.log(formatBytes(124, true)); // Outputs '992 bits'
-console.log(formatBytes(125, true)); // Outputs '1 Kb'
-console.log(formatBytes(12.5e4, true)); // Outputs '1 Mb'
-console.log(formatBytes(1.25e8, true)); // Outputs '1 Gb'
-console.log(formatBytes(1.25e11, true)); // Outputs '1 Tb'
-console.log(formatBytes(1.25e14, true)); // Outputs '1 Pb'
+console.log(formatBytes(124, true)) // Outputs '992 bits'
+console.log(formatBytes(125, true)) // Outputs '1 Kb'
+console.log(formatBytes(12.5e4, true)) // Outputs '1 Mb'
+console.log(formatBytes(1.25e8, true)) // Outputs '1 Gb'
+console.log(formatBytes(1.25e11, true)) // Outputs '1 Tb'
+console.log(formatBytes(1.25e14, true)) // Outputs '1 Pb'
 ```
 
 </details>
@@ -309,11 +309,11 @@ The clamped value.
 <summary>Usage</summary>
 
 ```ts
-import { clamp } from "@alessiofrittoli/math-utils";
+import { clamp } from '@alessiofrittoli/math-utils'
 
-console.log(clamp(110)); // Outputs: 100
-console.log(clamp(-110)); // Outputs: 0
-console.log(clamp(110, -200, 200)); // Outputs: 110
+console.log(clamp(110)) // Outputs: 100
+console.log(clamp(-110)) // Outputs: 0
+console.log(clamp(110, -200, 200)) // Outputs: 110
 ```
 
 </details>

@@ -7,6 +7,4 @@
  * 				- `0` returns `a`, `1` returns `b`.
  * @returns The interpolated value between `a` and `b`.
  */
-export const lerp = ( a: number, b: number, t: number ) => (
-	a * ( 1 - t ) + b * t
-)
+export const lerp = (a: number, b: number, t: number): number => a * (1 - t) + b * t

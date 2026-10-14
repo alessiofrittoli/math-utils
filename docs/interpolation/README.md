@@ -13,12 +13,12 @@ Performs linear interpolation between two values, returning a value that is a we
 The `lerp` function is commonly used in animations, simulations, or any scenario where you need to interpolate (or "blend") between two values based on a factor that typically ranges from 0 to 1.
 
 ```ts
-import { lerp } from "@alessiofrittoli/math-utils";
+import { lerp } from '@alessiofrittoli/math-utils'
 
 // Interpolate between two values
-lerp(0, 10, 0); // Output: 0
-lerp(0, 10, 0.5); // Output: 5
-lerp(0, 10, 1); // Output: 10
+lerp(0, 10, 0) // Output: 0
+lerp(0, 10, 0.5) // Output: 5
+lerp(0, 10, 1) // Output: 10
 ```
 
 </details>
@@ -56,21 +56,21 @@ The interpolated value between `a` and `b`, calculated as `a * (1 - t) + b * t`.
 ###### Interpolation at the Ends
 
 ```ts
-lerp(0, 10, 0); // Output: 0
-lerp(0, 10, 1); // Output: 10
+lerp(0, 10, 0) // Output: 0
+lerp(0, 10, 1) // Output: 10
 ```
 
 ###### Interpolation at the Midpoint
 
 ```ts
-lerp(0, 10, 0.5); // Output: 5
+lerp(0, 10, 0.5) // Output: 5
 ```
 
 ###### Other Values of `t`
 
 ```ts
-lerp(5, 15, 0.25); // Output: 7.5
-lerp(100, 200, 0.75); // Output: 175
+lerp(5, 15, 0.25) // Output: 7.5
+lerp(100, 200, 0.75) // Output: 175
 ```
 
 </details>
