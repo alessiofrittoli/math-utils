@@ -12,10 +12,10 @@ export type UUID = `${string}-${string}-${string}-${string}-${string}`
  * @returns Random number between the given range.
  */
 export const mtRand = (min: number | string = 0, max: number | string = 0x7fffffff): number => {
-	min = parseInt(min.toString(), 10)
-	max = parseInt(max.toString(), 10)
+	const _min = parseInt(min.toString(), 10)
+	const _max = parseInt(max.toString(), 10)
 
-	return Math.floor(Math.random() * (max - min + 1)) + min
+	return Math.floor(Math.random() * (_max - _min + 1)) + _min
 }
 
 /**

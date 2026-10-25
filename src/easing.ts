@@ -1,3 +1,4 @@
+// oxlint-disable no-param-reassign
 /**
  * Represents a time easing function.
  *

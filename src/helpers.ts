@@ -76,7 +76,7 @@ export const englishOrdinalSuffix = (number: number): EnglishOrdinalSuffix => {
  *
  * This behaves similarly to `String.prototype.padStart`
  *
- * @param value		The value to pad with the given character.
+ * @param _value		The value to pad with the given character.
  * @param maxLength	The length of the resulting string once the given value has been padded.\
  * 					If this parameter is smaller than the given value's length, the current string will be returned as it is.
  * @param character ( Optional ) The character to use while padding the given value.
@@ -84,12 +84,13 @@ export const englishOrdinalSuffix = (number: number): EnglishOrdinalSuffix => {
  * @returns The number as a string, padded with the given character if necessary. Default: `0`.
  */
 export const padStart = (value: string | number, maxLength: number, character: string = '0'): string => {
-	value = value.toString()
-	if (value.length >= maxLength) return value
+	const _value = value.toString()
+
+	if (_value.length >= maxLength) return _value
 
 	const padding = Array(maxLength + 1).join(character)
 
-	return `${padding}${value}`.slice(maxLength * -1)
+	return `${padding}${_value}`.slice(maxLength * -1)
 }
 
 /**

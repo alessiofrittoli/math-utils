@@ -1,4 +1,4 @@
-import { getTypedMap, type TypedMap } from '@alessiofrittoli/web-utils'
+import { getTypedMap, type TypedMap } from '@alessiofrittoli/typed-map'
 
 /**
  * Generates a new conversion map where each key's ratio is recalculated

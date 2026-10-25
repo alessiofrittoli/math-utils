@@ -23,6 +23,7 @@ describe('Tween', () => {
 	beforeEach(() => {
 		vi.useFakeTimers()
 
+		// oxlint-disable-next-line typescript/unbound-method
 		originalPerformanceNow = global.performance.now
 		originalRAF = global.requestAnimationFrame
 		originalCAF = global.cancelAnimationFrame
