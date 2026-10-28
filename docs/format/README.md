@@ -253,7 +253,7 @@ A string representing the formatted size.
 <summary>Usage</summary>
 
 ```ts
-import { formatBytes } from '@alessiofrittoli/math-utils'
+import { formatBytes } from '@alessiofrittoli/math-utils/format'
 
 console.log(formatBytes(999)) // Outputs: '999 bytes'
 console.log(formatBytes(1024)) // Outputs: '1.024 KB'
