@@ -1,5 +1,4 @@
-export * from '@/format/format'
-export * from '@/format/bytes'
+export * from '@/format'
 export * from '@/conversion'
 export * from '@/easing'
 export * from '@/helpers'

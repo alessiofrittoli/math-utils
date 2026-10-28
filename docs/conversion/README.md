@@ -90,7 +90,8 @@ console.log(getMapRatio(CacioEPepe, 'spaghettoni'))
 #### Using ratio values to convert values
 
 ```ts
-import { convertTo, getMapRatio } from '@alessiofrittoli/math-utils'
+import { convertTo } from '@alessiofrittoli/math-utils/conversion'
+import { getMapRatio } from '@alessiofrittoli/math-utils'
 
 /** Carbonara for 4 people. */
 const Carbonara = {

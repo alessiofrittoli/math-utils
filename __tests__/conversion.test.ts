@@ -1,5 +1,6 @@
-import { convertTo, getMapRatio, hexToRGBA, hexToRGBAString, hexToAnsiTrueColor } from '@/conversion'
+import { getMapRatio, hexToAnsiTrueColor, hexToRGBA, hexToRGBAString } from '@/_conversion'
 import { describe, expect, it } from 'vitest'
+import { convertTo } from '@/conversion'
 
 describe('getMapRatio', () => {
 	const CacioEPepe = {
